@@ -28,6 +28,7 @@
 		F414DFF428182F6200EA07D9 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = F414DFF328182F6200EA07D9 /* RxTest */; };
 		F414DFF628182FFE00EA07D9 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414DFF528182FFE00EA07D9 /* ViewModelType.swift */; };
 		F4DED953281859A500AD1649 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DED952281859A500AD1649 /* Timer.swift */; };
+		F4DED9552818CF0E00AD1649 /* PomoRxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DED9542818CF0E00AD1649 /* PomoRxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F414DFE82818268A00EA07D9 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		F414DFF528182FFE00EA07D9 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		F4DED952281859A500AD1649 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		F4DED9542818CF0E00AD1649 /* PomoRxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoRxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				F414DFE1281820B200EA07D9 /* PomoView.swift */,
 				F414DFAE28180A2400EA07D9 /* PomoViewController.swift */,
+				F4DED9542818CF0E00AD1649 /* PomoRxViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				F414DFAD28180A2400EA07D9 /* SceneDelegate.swift in Sources */,
 				F414DFF628182FFE00EA07D9 /* ViewModelType.swift in Sources */,
 				F4DED953281859A500AD1649 /* Timer.swift in Sources */,
+				F4DED9552818CF0E00AD1649 /* PomoRxViewController.swift in Sources */,
 				F414DFE92818268A00EA07D9 /* AppAppearance.swift in Sources */,
 				F414DFE52818218900EA07D9 /* ViewRepresentable.swift in Sources */,
 			);

@@ -123,3 +123,31 @@ class PomoView: UIView, ViewRepresentable {
         }
     }
 }
+
+/// rx 작업을 위한 extension
+///
+extension PomoView {
+    func timerValueSetting(_ value: Int) {
+        let hours = value / 3600
+        let minutes = value % 3600 / 60
+        let seconds = value % 3600 % 60
+        
+        timerLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    func toggleButtonTapEvent(isTap: ((Bool) -> Void)?) {
+        toggleButton.rx.tap
+            .debounce(.milliseconds(200), scheduler: MainScheduler.instance)
+            .subscribe { _ in
+                isTap?(true)
+        }.disposed(by: disposeBag)
+    }
+    
+    func cancelButtonTapEvent(isTap: ((Bool) -> Void)?) {
+        cancelButton.rx.tap
+            .debounce(.milliseconds(200), scheduler: MainScheduler.instance)
+            .subscribe { _ in
+                isTap?(true)
+        }.disposed(by: disposeBag)
+    }
+}
