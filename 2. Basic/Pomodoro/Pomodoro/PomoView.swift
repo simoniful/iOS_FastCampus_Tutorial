@@ -7,8 +7,13 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
+import RxRelay
 
 class PomoView: UIView, ViewRepresentable {
+    fileprivate let disposeBag = DisposeBag()
+    
     let pomodoroImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "pomodoro")
@@ -20,14 +25,14 @@ class PomoView: UIView, ViewRepresentable {
         label.text = "00:00:00"
         label.font = .systemFont(ofSize: 50, weight: .bold)
         label.textAlignment = .center
-        label.isHidden = true
+        label.alpha = 0
         return label
     }()
     
     let progressView: UIProgressView = {
         let progressView = UIProgressView()
         progressView.progress = 1
-        progressView.isHidden = true
+        progressView.alpha = 0
         return progressView
     }()
     
@@ -50,7 +55,6 @@ class PomoView: UIView, ViewRepresentable {
         let button = UIButton()
         button.setTitle("취소", for: .normal)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
-        // button.setTitleColor(UIColor.systemGray, for: .normal)
         button.isEnabled = true
         
         return button
@@ -118,6 +122,4 @@ class PomoView: UIView, ViewRepresentable {
             $0.trailing.equalTo(-24)
         }
     }
-    
-    
 }

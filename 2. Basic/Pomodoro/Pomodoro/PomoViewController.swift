@@ -32,14 +32,9 @@ class PomoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureToToggleButton()
         navigationController?.navigationBar.isHidden = true
+        self.configureToToggleButton()
         bind()
-    }
-    
-    func setTimerInfoVisible(isHidden: Bool) {
-        self.pomoView.timerLabel.isHidden = isHidden
-        self.pomoView.progressView.isHidden = isHidden
     }
     
     func configureToToggleButton() {
@@ -62,6 +57,14 @@ class PomoViewController: UIViewController {
                 self.pomoView.timerLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
                 self.pomoView.progressView.progress = Float(self.currentSeconds) / Float(self.duration)
                 
+                UIView.animate(withDuration: 0.5, delay: 0) {
+                    // CGAffineTransform - 뷰의 프레임 계산 없이 2D 그래픽 그리는 것이 가능
+                    self.pomoView.pomodoroImage.transform = CGAffineTransform(rotationAngle: .pi)
+                }
+                UIView.animate(withDuration: 0.5, delay: 0.5) {
+                    self.pomoView.pomodoroImage.transform = CGAffineTransform(rotationAngle: .pi * 2)
+                }
+                
                 if self.currentSeconds <= 0 {
                     self.stopTimer()
                     AudioServicesPlaySystemSound(1005)
@@ -77,8 +80,12 @@ class PomoViewController: UIViewController {
         }
         self.timerStatus = .end
         self.pomoView.cancelButton.isEnabled = false
-        self.setTimerInfoVisible(isHidden: true)
-        self.pomoView.datePicker.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.pomoView.timerLabel.alpha = 0
+            self.pomoView.progressView.alpha = 0
+            self.pomoView.datePicker.alpha = 1
+            self.pomoView.transform = .identity
+        }
         self.pomoView.toggleButton.isSelected = false
         self.timer?.cancel()
         self.timer = nil
@@ -98,8 +105,11 @@ class PomoViewController: UIViewController {
                 case .end:
                     self.currentSeconds = self.duration
                     self.timerStatus = .start
-                    self.setTimerInfoVisible(isHidden: false)
-                    self.pomoView.datePicker.isHidden = true
+                    UIView.animate(withDuration: 0.5) {
+                        self.pomoView.timerLabel.alpha = 1
+                        self.pomoView.progressView.alpha = 1
+                        self.pomoView.datePicker.alpha = 0
+                    }
                     self.pomoView.toggleButton.isSelected = true
                     self.pomoView.cancelButton.isEnabled = true
                     self.startTimer()

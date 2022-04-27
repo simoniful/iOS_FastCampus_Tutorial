@@ -27,6 +27,7 @@
 		F414DFF228182F6200EA07D9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F414DFF128182F6200EA07D9 /* RxSwift */; };
 		F414DFF428182F6200EA07D9 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = F414DFF328182F6200EA07D9 /* RxTest */; };
 		F414DFF628182FFE00EA07D9 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414DFF528182FFE00EA07D9 /* ViewModelType.swift */; };
+		F4DED953281859A500AD1649 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DED952281859A500AD1649 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F414DFE42818218900EA07D9 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		F414DFE82818268A00EA07D9 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		F414DFF528182FFE00EA07D9 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		F4DED952281859A500AD1649 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				F414DFE72818267900EA07D9 /* Application */,
 				F414DFE02818208B00EA07D9 /* View */,
 				F414DFDF2818207E00EA07D9 /* VIewModel */,
+				F4DED9512818599700AD1649 /* Util */,
 				F414DFB028180A2400EA07D9 /* Main.storyboard */,
 				F414DFB828180A2700EA07D9 /* Info.plist */,
 				F414DFE32818214E00EA07D9 /* Protocol */,
@@ -192,6 +195,14 @@
 				F414DFE82818268A00EA07D9 /* AppAppearance.swift */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		F4DED9512818599700AD1649 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F4DED952281859A500AD1649 /* Timer.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 				F414DFDB2818204B00EA07D9 /* PomoViewModel.swift in Sources */,
 				F414DFAD28180A2400EA07D9 /* SceneDelegate.swift in Sources */,
 				F414DFF628182FFE00EA07D9 /* ViewModelType.swift in Sources */,
+				F4DED953281859A500AD1649 /* Timer.swift in Sources */,
 				F414DFE92818268A00EA07D9 /* AppAppearance.swift in Sources */,
 				F414DFE52818218900EA07D9 /* ViewRepresentable.swift in Sources */,
 			);
