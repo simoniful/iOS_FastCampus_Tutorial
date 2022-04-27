@@ -4,7 +4,6 @@ import Foundation
 
 // 구조체, 클래스, 열거형의 메서드, 프로퍼티 등의 청사진
 
-
 // 상속 클래스 우선 먼저 적고, 이 후 프로토콜
 protocol SomeProtocol { }
 protocol SomeProtocol2 { }
