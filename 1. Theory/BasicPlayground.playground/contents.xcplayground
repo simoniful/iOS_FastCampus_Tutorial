@@ -12,5 +12,16 @@
         <page name='Class'/>
         <page name='Init'/>
         <page name='Property'/>
+        <page name='Class &amp; Struct'/>
+        <page name='Inheritance'/>
+        <page name='TypeCasting'/>
+        <page name='Assert &amp; guard'/>
+        <page name='Protocol'/>
+        <page name='Extension'/>
+        <page name='Enumeration'/>
+        <page name='Optional chaining'/>
+        <page name='Do try catch'/>
+        <page name='Closure'/>
+        <page name='Higher order function'/>
     </pages>
 </playground>
