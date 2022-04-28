@@ -57,6 +57,7 @@
 		F4093CB7281AA29E009B5780 /* WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F4093CD3281AEC45009B5780 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F4093CD6281AEC93009B5780 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
+		F4093CDB281AF705009B5780 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		F4093C88281AA29B009B5780 = {
 			isa = PBXGroup;
 			children = (
+				F4093CDB281AF705009B5780 /* Secrets.xcconfig */,
 				F4093C93281AA29B009B5780 /* Weather */,
 				F4093CAA281AA29E009B5780 /* WeatherTests */,
 				F4093CB4281AA29E009B5780 /* WeatherUITests */,
@@ -115,6 +117,7 @@
 			children = (
 				F4093CD9281AF3CE009B5780 /* View */,
 				F4093CDA281AF3E7009B5780 /* ViewModel */,
+				F4093CDC281AF88A009B5780 /* Extension */,
 				F4093CD5281AEC85009B5780 /* Protocol */,
 				F4093CA2281AA29E009B5780 /* Info.plist */,
 				F4093CD8281AF392009B5780 /* Resources */,
@@ -172,6 +175,13 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4093CDC281AF88A009B5780 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +495,7 @@
 		};
 		F4093CBC281AA29E009B5780 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4093CDB281AF705009B5780 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -495,7 +506,6 @@
 				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -514,6 +524,7 @@
 		};
 		F4093CBD281AA29E009B5780 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4093CDB281AF705009B5780 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,7 +535,6 @@
 				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -543,6 +553,7 @@
 		};
 		F4093CBF281AA29E009B5780 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4093CDB281AF705009B5780 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -563,6 +574,7 @@
 		};
 		F4093CC0281AA29E009B5780 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4093CDB281AF705009B5780 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
