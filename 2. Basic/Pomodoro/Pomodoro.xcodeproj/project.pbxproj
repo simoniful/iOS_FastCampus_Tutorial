@@ -10,7 +10,6 @@
 		F414DFAB28180A2400EA07D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414DFAA28180A2400EA07D9 /* AppDelegate.swift */; };
 		F414DFAD28180A2400EA07D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414DFAC28180A2400EA07D9 /* SceneDelegate.swift */; };
 		F414DFAF28180A2400EA07D9 /* PomoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414DFAE28180A2400EA07D9 /* PomoViewController.swift */; };
-		F414DFB228180A2400EA07D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F414DFB028180A2400EA07D9 /* Main.storyboard */; };
 		F414DFB428180A2700EA07D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F414DFB328180A2700EA07D9 /* Assets.xcassets */; };
 		F414DFB728180A2700EA07D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F414DFB528180A2700EA07D9 /* LaunchScreen.storyboard */; };
 		F414DFC228180A2700EA07D9 /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414DFC128180A2700EA07D9 /* PomodoroTests.swift */; };
@@ -53,7 +52,6 @@
 		F414DFAA28180A2400EA07D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F414DFAC28180A2400EA07D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F414DFAE28180A2400EA07D9 /* PomoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoViewController.swift; sourceTree = "<group>"; };
-		F414DFB128180A2400EA07D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F414DFB328180A2700EA07D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F414DFB628180A2700EA07D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F414DFB828180A2700EA07D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				F414DFE02818208B00EA07D9 /* View */,
 				F414DFDF2818207E00EA07D9 /* VIewModel */,
 				F4DED9512818599700AD1649 /* Util */,
-				F414DFB028180A2400EA07D9 /* Main.storyboard */,
 				F414DFB828180A2700EA07D9 /* Info.plist */,
 				F414DFE32818214E00EA07D9 /* Protocol */,
 				F414DFE6281821A000EA07D9 /* Resources */,
@@ -326,7 +323,6 @@
 			files = (
 				F414DFB728180A2700EA07D9 /* LaunchScreen.storyboard in Resources */,
 				F414DFB428180A2700EA07D9 /* Assets.xcassets in Resources */,
-				F414DFB228180A2400EA07D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,14 +393,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F414DFB028180A2400EA07D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F414DFB128180A2400EA07D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F414DFB528180A2700EA07D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -544,7 +532,6 @@
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -574,7 +561,6 @@
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
