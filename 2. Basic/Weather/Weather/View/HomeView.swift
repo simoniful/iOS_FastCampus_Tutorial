@@ -39,6 +39,7 @@ class HomeView: UIView, ViewRepresentable {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 8
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -53,7 +54,6 @@ class HomeView: UIView, ViewRepresentable {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.text = "맑음"
-        label.textAlignment = .center
         return label
     }()
     
@@ -62,6 +62,7 @@ class HomeView: UIView, ViewRepresentable {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 3
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -69,7 +70,6 @@ class HomeView: UIView, ViewRepresentable {
         let label = UILabel()
         label.font = .systemFont(ofSize: 40, weight: .bold)
         label.text = "23°C"
-        label.textAlignment = .center
         return label
     }()
     
@@ -78,6 +78,7 @@ class HomeView: UIView, ViewRepresentable {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.spacing = 20
+        stackView.alignment = .center
         return stackView
     }()
     

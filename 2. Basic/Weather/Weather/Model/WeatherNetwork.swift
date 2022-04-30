@@ -54,13 +54,16 @@ class WeatherNetwork {
             
             return URLSession.shared.rx.response(request: request)
                 .map { (result: (response: HTTPURLResponse, data: Data)) -> T in
-                    let decoder = JSONDecoder()
                     // 원하는 키를 구성하여 요청에서 제네릭을 활용한 구조체 생성
-                    // let decoder = WeatherNetwork.jsonDecoder(contentIdentifier: "")
-                    let envelope = try decoder.decode(T.self, from: result.data)
-                    // let envelope = try decoder.decode(WeatherResult<T>.self, from: result.data)
-                    return envelope
-                    // return envelope.content
+                    if contentIdentifier != "" {
+                        let decoder = WeatherNetwork.jsonDecoder(contentIdentifier: contentIdentifier)
+                        let envelope = try decoder.decode(WeatherResult<T>.self, from: result.data)
+                        return envelope.content
+                    } else {
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(T.self, from: result.data)
+                        return result
+                    }
                 }
         } catch {
             return Observable.empty()
