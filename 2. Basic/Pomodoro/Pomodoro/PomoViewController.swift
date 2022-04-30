@@ -92,7 +92,7 @@ class PomoViewController: UIViewController {
     }
 
     func bind() {
-        let input =  PomoViewModel.Input(
+        let input = PomoViewModel.Input(
             cancelButtonTap: pomoView.cancelButton.rx.tap,
             toggleButtonTap: pomoView.toggleButton.rx.tap)
         let output = pomoViewModel.transform(input: input)
