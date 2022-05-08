@@ -8,8 +8,8 @@
 import UIKit
 
 class DetailViewController: UITableViewController {
-
-    let detailView = DetailView()
+    private let detailView = DetailView()
+    private var viewModel: DetailViewModel!
     
     override func loadView() {
         self.view = detailView
@@ -17,6 +17,13 @@ class DetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.content
+        viewModel = DetailViewModel(delegate: self)
+        tableView.delegate = viewModel
+        tableView.dataSource = viewModel
+    }
+}
+
+extension DetailViewController: DetailViewModelDelegate {
+    func cellTapped() {
     }
 }

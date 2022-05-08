@@ -7,7 +7,15 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
-class DetailView : UITableView {
+class DetailView : UITableView{
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        fatalError()
+    }
     
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+    }
 }
