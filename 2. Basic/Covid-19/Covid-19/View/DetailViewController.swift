@@ -29,5 +29,6 @@ class DetailViewController: UITableViewController {
 
 extension DetailViewController: DetailViewModelDelegate {
     func cellTapped() {
+        print("Tapped Cell")
     }
 }

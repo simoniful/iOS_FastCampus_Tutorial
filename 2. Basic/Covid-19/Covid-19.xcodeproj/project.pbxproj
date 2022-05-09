@@ -418,7 +418,6 @@
 		};
 		F4A09C732825752C007E3434 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F0D402B2579DCCB3971304C /* Pods-Covid-19.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -447,7 +446,6 @@
 		};
 		F4A09C742825752C007E3434 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12BBEDFC9C311936909098E3 /* Pods-Covid-19.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

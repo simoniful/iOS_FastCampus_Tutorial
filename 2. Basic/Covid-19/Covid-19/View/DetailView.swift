@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class DetailView : UITableView{
+class DetailView : UITableView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError()
