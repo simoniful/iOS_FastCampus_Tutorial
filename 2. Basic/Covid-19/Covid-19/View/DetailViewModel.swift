@@ -9,85 +9,85 @@ import Foundation
 import UIKit
 
 protocol DetailViewModelDelegate: AnyObject {
-    // When the user tapped on the twitter cell, this function will be called
-    // and passed to the delegate
     func cellTapped()
 }
 
 class DetailViewModel: NSObject {
     private var tableViewSections = [DetailSection]()
+    var covidOverview: CovidOverview?
     static let ReuseIdentifier = "DetailCell"
     private weak var delegate: DetailViewModelDelegate?
     
-    init(delegate: DetailViewModelDelegate) {
+    init(delegate: DetailViewModelDelegate, covidData: CovidOverview) {
         super.init()
         self.delegate = delegate
-        configureDatasource()
+        covidOverview = covidData
+        configureDatasource(covidData: covidData)
     }
     
-    private func configureDatasource() {
+    private func configureDatasource(covidData: CovidOverview) {
         let getInTouchSection = DetailSection(
             title: "현황",
             cells: [
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: {
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "신규 확진자"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.newCase) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
                 ),
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: { 
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "확진자"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.totalCase) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
                 ),
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: {
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "완치자"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.recovered) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
                 ),
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: {
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "사망자"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.death) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
                 ),
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: {
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "발생률"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.percentage) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
                 ),
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: {
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "해외 유입 신규 확진자"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.newFcase) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
                 ),
                 DetailItem(
-                    createdCell: { data in
+                    createdCell: {
                         let cell = UITableViewCell(style: .value1, reuseIdentifier: Self.ReuseIdentifier)
                         cell.textLabel?.text = "지역 발생 신규 확진자"
-                        cell.detailTextLabel?.text = data
+                        cell.detailTextLabel?.text = "\(covidData.newCcase) 명"
                         return cell
                     },
                     action: { [weak self] _ in self?.delegate?.cellTapped() }
@@ -105,8 +105,7 @@ extension DetailViewModel: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewSections[indexPath.section].cells[indexPath.row]
-        let data = ""
-        return cell.createdCell(data)
+        return cell.createdCell()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

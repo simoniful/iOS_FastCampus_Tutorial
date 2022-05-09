@@ -11,6 +11,10 @@ import SnapKit
 import Charts
 
 class MainView: UIView, ViewRepresentable {
+    let activityIndicator : UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        return indicator
+    }()
     
     let localTitleLabel : UILabel = {
         let label = UILabel()
@@ -58,11 +62,13 @@ class MainView: UIView, ViewRepresentable {
         stackView.distribution = .fillEqually
         stackView.spacing = 0
         stackView.alignment = .center
+        stackView.isHidden = true
         return stackView
     }()
     
     let pieChart: PieChartView = {
         let pieChart = PieChartView()
+        pieChart.isHidden = true
         return pieChart
     }()
     
@@ -90,6 +96,7 @@ class MainView: UIView, ViewRepresentable {
         
         addSubview(horizontalStackView1)
         addSubview(pieChart)
+        addSubview(activityIndicator)
     }
     
     func setupConstraints() {
@@ -104,6 +111,11 @@ class MainView: UIView, ViewRepresentable {
             $0.leading.equalTo(24)
             $0.trailing.equalTo(-24)
             $0.bottom.equalTo(-24)
+        }
+        
+        activityIndicator.snp.makeConstraints {
+            $0.centerX.equalTo(safeAreaLayoutGuide)
+            $0.centerY.equalTo(safeAreaLayoutGuide)
         }
     }
 }

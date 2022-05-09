@@ -8,6 +8,8 @@
 import UIKit
 
 class DetailViewController: UITableViewController {
+    var covidOverview: CovidOverview?
+    
     private let detailView = DetailView()
     private var viewModel: DetailViewModel!
     
@@ -17,7 +19,9 @@ class DetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = DetailViewModel(delegate: self)
+        guard let covidOverview = self.covidOverview else { return }
+        self.title = covidOverview.countryName
+        viewModel = DetailViewModel(delegate: self, covidData: covidOverview)
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
     }

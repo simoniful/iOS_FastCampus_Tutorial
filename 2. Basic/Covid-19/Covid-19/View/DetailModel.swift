@@ -14,6 +14,6 @@ struct DetailSection {
 }
 
 struct DetailItem {
-    var createdCell: (String) -> UITableViewCell // The cell that this item creates
+    var createdCell: () -> UITableViewCell // The cell that this item creates
     var action: ((DetailItem) -> Swift.Void)? // The action that this item might have when tapped
 }
