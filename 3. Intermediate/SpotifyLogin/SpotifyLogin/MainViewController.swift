@@ -8,13 +8,26 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
+    let mainView = MainView()
+    
+    override func loadView() {
+        self.view = mainView
     }
     
-
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        mainView.logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func logoutButtonTapped() {
+        print("logout button tapped!")
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
