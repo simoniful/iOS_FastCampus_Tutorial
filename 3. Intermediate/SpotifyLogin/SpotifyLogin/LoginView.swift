@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import GoogleSignIn
 import SnapKit
 
 class LoginView: UIView, ViewRepresentable {
@@ -59,6 +60,7 @@ class LoginView: UIView, ViewRepresentable {
     
     let googleButton: UIButton = {
        let button = UIButton()
+        
         button.setTitle("구글로 계속하기", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.setTitleColor(UIColor.white, for: .normal)

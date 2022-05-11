@@ -10,6 +10,9 @@ target 'SpotifyLogin' do
   pod 'RxCocoa', '6.5.0'
   pod 'RxAlamofire'
   pod 'SnapKit', '~> 5.6.0'
+  pod 'Firebase/Installations'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'SpotifyLoginTests' do
     inherit! :search_paths

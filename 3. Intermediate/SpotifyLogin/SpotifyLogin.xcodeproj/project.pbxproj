@@ -25,6 +25,7 @@
 		F41F725528295D8D00D7BE52 /* EnterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F725428295D8D00D7BE52 /* EnterEmailView.swift */; };
 		F41F725728296B2700D7BE52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F725628296B2700D7BE52 /* MainViewController.swift */; };
 		F41F725928296B3C00D7BE52 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F725828296B3C00D7BE52 /* MainView.swift */; };
+		F41F725B282A945000D7BE52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F41F725A282A945000D7BE52 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		F41F725428295D8D00D7BE52 /* EnterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEmailView.swift; sourceTree = "<group>"; };
 		F41F725628296B2700D7BE52 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F41F725828296B3C00D7BE52 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F41F725A282A945000D7BE52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F41F725C282B722200D7BE52 /* SpotifyLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpotifyLogin.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 		F41F721A28294EDB00D7BE52 /* SpotifyLogin */ = {
 			isa = PBXGroup;
 			children = (
+				F41F725C282B722200D7BE52 /* SpotifyLogin.entitlements */,
 				F41F724D2829505500D7BE52 /* LoginView.swift */,
 				F41F721F28294EDB00D7BE52 /* LoginViewController.swift */,
 				F41F725428295D8D00D7BE52 /* EnterEmailView.swift */,
@@ -163,6 +167,7 @@
 				F41F72512829507800D7BE52 /* Protocol */,
 				F41F722128294EDB00D7BE52 /* Main.storyboard */,
 				F41F722928294EDD00D7BE52 /* Info.plist */,
+				F41F725A282A945000D7BE52 /* GoogleService-Info.plist */,
 			);
 			path = SpotifyLogin;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41F722828294EDD00D7BE52 /* LaunchScreen.storyboard in Resources */,
+				F41F725B282A945000D7BE52 /* GoogleService-Info.plist in Resources */,
 				F41F722528294EDD00D7BE52 /* Assets.xcassets in Resources */,
 				F41F722328294EDB00D7BE52 /* Main.storyboard in Resources */,
 			);
@@ -628,6 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpotifyLogin/SpotifyLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AT2N75TMZD;
@@ -657,6 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpotifyLogin/SpotifyLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AT2N75TMZD;

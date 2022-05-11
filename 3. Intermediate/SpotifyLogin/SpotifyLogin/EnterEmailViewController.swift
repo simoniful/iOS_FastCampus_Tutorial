@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class EnterEmailViewController: UIViewController {
 
@@ -34,9 +36,43 @@ class EnterEmailViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
-        print("nextButton")
+        // Firebase 이메일 / 비밀번호 인증
+        let email = enterEmailView.emailTextField.text ?? ""
+        let password = enterEmailView.passwordTextField.text ?? ""
+        // 신규 사용자 생성
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                let code = (error as NSError).code
+                switch code {
+                case 17007:
+                    self.loginUser(withEmail: email, password: password)
+                default:
+                    self.enterEmailView.errorLabel.text = error.localizedDescription
+                }
+            } else {
+                self.showMainViewController()
+            }
+        }
     }
     
+    private func loginUser(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.enterEmailView.errorLabel.text = error.localizedDescription
+            } else {
+                self.showMainViewController()
+            }
+        }
+    }
+    
+    private func showMainViewController() {
+        let mainViewController = MainViewController()
+        mainViewController.modalPresentationStyle = .fullScreen
+        navigationController?.show(mainViewController, sender: nil)
+    }
 }
 
 extension EnterEmailViewController: UITextFieldDelegate {
@@ -48,7 +84,6 @@ extension EnterEmailViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         let isEmailEmpty = enterEmailView.emailTextField.text == ""
         let isPasswordEmpty = enterEmailView.passwordTextField.text == ""
-        
         enterEmailView.nextButton.isEnabled = !isEmailEmpty && !isPasswordEmpty
     }
 }
