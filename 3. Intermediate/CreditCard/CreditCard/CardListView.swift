@@ -1,15 +1,14 @@
 //
-//  DetailView.swift
-//  Covid-19
+//  CardListView.swift
+//  CreditCard
 //
-//  Created by Sang hun Lee on 2022/05/08.
+//  Created by Sang hun Lee on 2022/05/12.
 //
 
 import Foundation
 import UIKit
 
-
-class DetailView : UITableView {
+class CardListView: UITableView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError()
