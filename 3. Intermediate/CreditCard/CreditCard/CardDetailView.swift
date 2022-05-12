@@ -204,5 +204,11 @@ class CardDetailVeiw: UIView, ViewRepresentable {
         }
         
         periodTitleLabel.setContentHuggingPriority(.init(rawValue: 1000), for: .horizontal)
+        conditionTitleLabel.setContentHuggingPriority(.required, for: .horizontal)
+        conditionTitleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        benefitConditionTitleLabel.setContentHuggingPriority(.required, for: .horizontal)
+        benefitConditionTitleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        benefitDetailTitleLabel.setContentHuggingPriority(.init(rawValue: 1000), for: .horizontal)
+        benefitDateTitleLabel.setContentHuggingPriority(.init(rawValue: 1000), for: .horizontal)
     }
 }

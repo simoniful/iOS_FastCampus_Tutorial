@@ -16,7 +16,7 @@ class CardListViewCell: UITableViewCell, ViewRepresentable {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.alignment = .center
-        stackView.spacing = 0
+        stackView.spacing = 10
         return stackView
     }()
     
@@ -102,15 +102,15 @@ class CardListViewCell: UITableViewCell, ViewRepresentable {
     
     func setupConstraints() {
         cardImageView.snp.makeConstraints {
-            $0.width.equalTo(80)
+            $0.width.equalTo(60)
             $0.height.equalTo(40)
         }
         
         horizontalView.snp.makeConstraints {
             $0.centerY.equalTo(safeAreaLayoutGuide)
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview().offset(-10)
+            $0.leading.equalTo(safeAreaLayoutGuide).offset(10)
+            $0.trailing.equalTo(safeAreaLayoutGuide).offset(-10)
             $0.bottom.equalToSuperview()
         }
         

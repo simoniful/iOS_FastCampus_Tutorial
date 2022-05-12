@@ -7,29 +7,68 @@
 
 import UIKit
 import Kingfisher
+import SnapKit
+import FirebaseDatabase
 
-class CardListViewController: UITableViewController {
-    let creditCardListView = CardListView()
+class CardListViewController: UIViewController {
+    let tableView = UITableView()
     
-    let API_KEY = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
-    
+    // Firebase realtime Database ref
+    var ref: DatabaseReference!
+
     var creditCardList: [CreditCard] = []
     
     override func loadView() {
-        self.view = creditCardListView
+        super.loadView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "카드 혜택 추천"
-        creditCardListView.register(CardListViewCell.self, forCellReuseIdentifier: CardListViewCell.identifier)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(CardListViewCell.self, forCellReuseIdentifier: CardListViewCell.identifier)
+        setTableView()
+        bindToDB()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func setTableView() {
+        self.view.addSubview(tableView)
+        self.tableView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
+    func bindToDB() {
+        ref = Database.database().reference()
+        ref.observe(.value) { snapshot in
+            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: value)
+                let cardData = try JSONDecoder().decode([String: CreditCard].self, from: jsonData)
+                let cardList = Array(cardData.values)
+                self.creditCardList = cardList.sorted{ $0.rank < $1.rank }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch let error {
+                print("ERROR JSON Parsing \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+extension CardListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return creditCardList.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CardListViewCell.identifier, for: indexPath) as? CardListViewCell else { return UITableViewCell() }
         
         let imageURL = URL(string: creditCardList[indexPath.row].cardImageURL)
@@ -43,11 +82,11 @@ class CardListViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = CardDetailViewController()
         detailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         self.show(detailViewController, sender: nil)
