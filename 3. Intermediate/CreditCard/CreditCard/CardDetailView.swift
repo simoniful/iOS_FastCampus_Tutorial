@@ -31,11 +31,8 @@ class CardDetailVeiw: UIView, ViewRepresentable {
         return label
     }()
     
-    let lottieView: AnimationView = {
-        let view = AnimationView(name: "money")
-        view.contentMode = .scaleAspectFit
-        view.loopMode = .loop
-        view.play()
+    let lottieView: UIView = {
+        let view = UIView()
         return view
     }()
     

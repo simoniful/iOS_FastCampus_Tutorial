@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import SnapKit
 
 class CardDetailViewController: UIViewController {
     let cardDetailView = CardDetailVeiw()
@@ -14,6 +15,7 @@ class CardDetailViewController: UIViewController {
     
     override func loadView() {
         self.view = cardDetailView
+        setLottieAnimation()
     }
     
     override func viewDidLoad() {
@@ -33,5 +35,21 @@ class CardDetailViewController: UIViewController {
         cardDetailView.benefitConditionDescLabel.text = "\(detail.benefitCondition)"
         cardDetailView.benefitDetailDescLabel.text = "\(detail.benefitDetail)"
         cardDetailView.benefitDateDescLabel.text = "\(detail.benefitDate)"
+    }
+    
+    func setLottieAnimation() {
+        let animationView = AnimationView(name: "money")
+        // animationView.frame = self.cardDetailView.lottieView.bounds
+        // animationView.center = self.cardDetailView.lottieView.center
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        self.cardDetailView.lottieView.addSubview(animationView)
+        animationView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(200)
+        }
     }
 }
