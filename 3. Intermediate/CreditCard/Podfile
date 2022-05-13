@@ -6,6 +6,11 @@ target 'CreditCard' do
   use_frameworks!
 
   # Pods for CreditCard
-  pod 'Firebase/Database'
+  pod 'SnapKit'
+  pod 'Kingfisher'
+  pod 'lottie-ios'
 
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 end

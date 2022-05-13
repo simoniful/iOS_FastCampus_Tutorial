@@ -16,13 +16,11 @@
 		F41F7282282CBC8200D7BE52 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F7281282CBC8200D7BE52 /* ViewRepresentable.swift */; };
 		F41F7285282CC13300D7BE52 /* CardListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F7284282CC13300D7BE52 /* CardListViewCell.swift */; };
 		F41F7288282CC2CF00D7BE52 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F7287282CC2CF00D7BE52 /* CreditCard.swift */; };
-		F41F728B282CC8C800D7BE52 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F41F728A282CC8C800D7BE52 /* SnapKit */; };
-		F41F728E282CD33B00D7BE52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F41F728D282CD33B00D7BE52 /* Kingfisher */; };
 		F41F7290282CD3F400D7BE52 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F728F282CD3F400D7BE52 /* CardDetailViewController.swift */; };
 		F41F7292282CD51100D7BE52 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F7291282CD51100D7BE52 /* CardDetailView.swift */; };
-		F41F7295282CD78800D7BE52 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F41F7294282CD78800D7BE52 /* Lottie */; };
 		F41F7297282CD86600D7BE52 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = F41F7296282CD86500D7BE52 /* money.json */; };
 		F41F7299282CE7EB00D7BE52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F41F7298282CE7EB00D7BE52 /* GoogleService-Info.plist */; };
+		F41F729B282D32A000D7BE52 /* CreditCardDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F729A282D32A000D7BE52 /* CreditCardDummy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +42,7 @@
 		F41F7291282CD51100D7BE52 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		F41F7296282CD86500D7BE52 /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
 		F41F7298282CE7EB00D7BE52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F41F729A282D32A000D7BE52 /* CreditCardDummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardDummy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41F728E282CD33B00D7BE52 /* Kingfisher in Frameworks */,
-				F41F728B282CC8C800D7BE52 /* SnapKit in Frameworks */,
-				F41F7295282CD78800D7BE52 /* Lottie in Frameworks */,
 				05C4B9065ED361D6A9991231 /* Pods_CreditCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				F41F7296282CD86500D7BE52 /* money.json */,
+				F41F729A282D32A000D7BE52 /* CreditCardDummy.swift */,
 				F41F7284282CC13300D7BE52 /* CardListViewCell.swift */,
 				F41F726D282C180800D7BE52 /* CardListViewControllerViewController.swift */,
 				F41F7291282CD51100D7BE52 /* CardDetailView.swift */,
@@ -160,9 +157,6 @@
 			);
 			name = CreditCard;
 			packageProductDependencies = (
-				F41F728A282CC8C800D7BE52 /* SnapKit */,
-				F41F728D282CD33B00D7BE52 /* Kingfisher */,
-				F41F7294282CD78800D7BE52 /* Lottie */,
 			);
 			productName = CreditCard;
 			productReference = F41F7266282C180800D7BE52 /* CreditCard.app */;
@@ -193,9 +187,6 @@
 			);
 			mainGroup = F41F725D282C180800D7BE52;
 			packageReferences = (
-				F41F7289282CC8C800D7BE52 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				F41F728C282CD33B00D7BE52 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				F41F7293282CD78800D7BE52 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = F41F7267282C180800D7BE52 /* Products */;
 			projectDirPath = "";
@@ -275,6 +266,7 @@
 				F41F7290282CD3F400D7BE52 /* CardDetailViewController.swift in Sources */,
 				F41F7285282CC13300D7BE52 /* CardListViewCell.swift in Sources */,
 				F41F7282282CBC8200D7BE52 /* ViewRepresentable.swift in Sources */,
+				F41F729B282D32A000D7BE52 /* CreditCardDummy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,51 +482,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F41F7289282CC8C800D7BE52 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-		F41F728C282CD33B00D7BE52 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		F41F7293282CD78800D7BE52 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F41F728A282CC8C800D7BE52 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F41F7289282CC8C800D7BE52 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		F41F728D282CD33B00D7BE52 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F41F728C282CD33B00D7BE52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		F41F7294282CD78800D7BE52 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F41F7293282CD78800D7BE52 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F41F725E282C180800D7BE52 /* Project object */;
 }

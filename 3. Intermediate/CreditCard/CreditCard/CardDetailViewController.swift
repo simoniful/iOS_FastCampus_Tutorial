@@ -34,5 +34,4 @@ class CardDetailViewController: UIViewController {
         cardDetailView.benefitDetailDescLabel.text = "\(detail.benefitDetail)"
         cardDetailView.benefitDateDescLabel.text = "\(detail.benefitDate)"
     }
-    
 }

@@ -8,15 +8,17 @@
 import Foundation
 
 struct CreditCard: Codable {
-    var cardImageURL: String
-    var id, rank: Int
+    var id: Int
+    var rank: Int
     var name: String
+    var cardImageURL: String
     var promotionDetail: PromotionDetail
     var isSelected: Bool?
 }
 
 struct PromotionDetail: Codable {
     var companyName: String
+    var period: String
     var amount: Int
-    var period, benefitDate, benefitDetail, benefitCondition, condition: String
+    var condition, benefitCondition, benefitDetail, benefitDate: String
 }
