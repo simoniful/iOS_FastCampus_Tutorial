@@ -12,6 +12,7 @@ import SnapKit
 class NoticeView: UIView, ViewRepresentable {
     let containerView: UIView = {
         let view = UIView()
+        view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 6
         return view
     }()
@@ -38,6 +39,9 @@ class NoticeView: UIView, ViewRepresentable {
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .largeTitle)
         label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        
         return label
     }()
     
@@ -47,6 +51,8 @@ class NoticeView: UIView, ViewRepresentable {
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .body)
         label.numberOfLines = 4
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         return label
     }()
     
@@ -60,9 +66,11 @@ class NoticeView: UIView, ViewRepresentable {
     
     let termDescLabel: UILabel = {
         let label = UILabel()
-        label.text = "2022년 5월 13일(월) 00:00~03:00 (3시간)"
+        label.text = "2022년 5월 13일(월) 00:00~03:00(3시간)"
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         return label
     }()
     

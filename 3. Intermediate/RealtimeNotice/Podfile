@@ -7,4 +7,6 @@ target 'RealtimeNotice' do
 
   # Pods for RealtimeNotice
   pod 'SnapKit'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Analytics'
 end

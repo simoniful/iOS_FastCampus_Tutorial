@@ -10,7 +10,6 @@ import UIKit
 
 class MainView: UIView, ViewRepresentable {
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()

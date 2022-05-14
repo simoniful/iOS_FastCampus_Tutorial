@@ -37,3 +37,5 @@ class NoticeViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+
