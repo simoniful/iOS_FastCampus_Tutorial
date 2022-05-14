@@ -19,6 +19,7 @@
 		F41F72F7282F8E1600D7BE52 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F72F6282F8E1600D7BE52 /* Alert.swift */; };
 		F41F72F9282F927B00D7BE52 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F72F8282F927A00D7BE52 /* AddAlertViewController.swift */; };
 		F41F72FB282F929600D7BE52 /* AddAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F72FA282F929600D7BE52 /* AddAlertView.swift */; };
+		F41F72FD28300BE600D7BE52 /* UNUserNotificationCenter + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F72FC28300BE600D7BE52 /* UNUserNotificationCenter + extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		F41F72F6282F8E1600D7BE52 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F41F72F8282F927A00D7BE52 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
 		F41F72FA282F929600D7BE52 /* AddAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertView.swift; sourceTree = "<group>"; };
+		F41F72FC28300BE600D7BE52 /* UNUserNotificationCenter + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNUserNotificationCenter + extension.swift"; sourceTree = "<group>"; };
 		F6278C436108F6A0CB59315F /* Pods-WaterDrink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterDrink.debug.xcconfig"; path = "Target Support Files/Pods-WaterDrink/Pods-WaterDrink.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				F41F72ED282F80AC00D7BE52 /* View */,
 				F41F72F5282F8E0700D7BE52 /* Model */,
 				F41F72EC282F809600D7BE52 /* Resources */,
+				F41F72FE28300D1C00D7BE52 /* Extension */,
 				F41F72F0282F814D00D7BE52 /* Protocol */,
 				F41F72E6282F808300D7BE52 /* Info.plist */,
 			);
@@ -136,6 +139,14 @@
 				F41F72F6282F8E1600D7BE52 /* Alert.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F41F72FE28300D1C00D7BE52 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F41F72FC28300BE600D7BE52 /* UNUserNotificationCenter + extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 				F41F72F2282F816400D7BE52 /* ViewRepresentable.swift in Sources */,
 				F41F72F4282F88D200D7BE52 /* AlertListViewCell.swift in Sources */,
 				F41F72F7282F8E1600D7BE52 /* Alert.swift in Sources */,
+				F41F72FD28300BE600D7BE52 /* UNUserNotificationCenter + extension.swift in Sources */,
 				F41F72F9282F927B00D7BE52 /* AddAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

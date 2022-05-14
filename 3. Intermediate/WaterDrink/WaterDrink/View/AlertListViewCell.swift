@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AlertListViewCell: UITableViewCell, ViewRepresentable {
     static let identifier = "AlertListViewCell"
+    let userNotificationCenter = UNUserNotificationCenter.current()
     
     let meridiemLabel: UILabel = {
         let label = UILabel()
@@ -38,6 +40,11 @@ class AlertListViewCell: UITableViewCell, ViewRepresentable {
               var alerts = try? PropertyListDecoder().decode([Alert].self, from: data) else { return }
         alerts[sender.tag].isOn = sender.isOn
         UserDefaults.standard.set(try? PropertyListEncoder().encode(alerts), forKey: "alerts")
+        if sender.isOn {
+            userNotificationCenter.addNotificationRequest(by: alerts[sender.tag])
+        } else {
+            userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [alerts[sender.tag].id])
+        }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
