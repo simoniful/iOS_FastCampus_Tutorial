@@ -10,6 +10,7 @@ import SwiftUI
 
 class MainViewController: UICollectionViewController {
     var contents: [Content] = []
+    var topItem: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,16 @@ class MainViewController: UICollectionViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "netflix_icon"), style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem?.tintColor = .white
         
         // 데이터 설정, 가져오기
         contents = getContent()
+        topItem = contents.first?.contentItem.randomElement()
         
         // Cell 설정
         collectionView.register(MainViewContentCell.self, forCellWithReuseIdentifier: MainViewContentCell.identifier)
         collectionView.register(MainViewContentRankCell.self, forCellWithReuseIdentifier: MainViewContentRankCell.identifier)
+        collectionView.register(MainViewContentMainCell.self, forCellWithReuseIdentifier: MainViewContentMainCell.identifier)
         
         // header 설정
         collectionView.register(MainViewContentHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MainViewContentHeader.identifier)
@@ -55,8 +59,8 @@ class MainViewController: UICollectionViewController {
                 return self.createLargeTypeSection()
             case .rank:
                 return self.createRankTypeSection()
-            default:
-                return nil
+            case .main:
+                return self.createMainTypeSection()
             }
         }
     }
@@ -138,20 +142,34 @@ class MainViewController: UICollectionViewController {
         section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
         return section
     }
+    
+    // 메인 표시 section layout 설정
+    private func createMainTypeSection() -> NSCollectionLayoutSection {
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(450))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 20, trailing: 0)
+        
+        return section
+    }
 }
 
 // UICollectionViewDataSource, UICollectionViewDelegate
 extension MainViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if contents[section].sectionType == .basic || contents[section].sectionType == .large || contents[section].sectionType == .rank {
-            switch section {
-            case 0:
-                return 1
-            default:
-                return contents[section].contentItem.count
-            }
+        switch section {
+        case 0:
+            return 1
+        default:
+            return contents[section].contentItem.count
         }
-        return 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -167,8 +185,11 @@ extension MainViewController {
             cell.rankLabel.text =
             String(describing: indexPath.row + 1)
             return cell
-        default:
-            return UICollectionViewCell()
+        case .main:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewContentMainCell.identifier, for: indexPath) as? MainViewContentMainCell else { return UICollectionViewCell() }
+            cell.imageView.image = topItem?.image
+            cell.descriptionLabel.text = topItem?.description
+            return cell
         }
     }
     
@@ -193,10 +214,6 @@ extension MainViewController {
         print("Test: \(sectionName)섹션의 \(indexPath.row + 1)번 째 콘텐츠")
     }
 }
-
-
-
-
 
 // SwiftUI를 활용한 미리보기
 struct MainViewController_Previews: PreviewProvider {
