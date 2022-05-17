@@ -14,7 +14,6 @@ class MainViewContentCell: UICollectionViewCell {
     
     let imageView = UIImageView()
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.backgroundColor = .white
