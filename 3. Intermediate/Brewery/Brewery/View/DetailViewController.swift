@@ -71,7 +71,7 @@ extension DetailViewController {
             cell.textLabel?.text = String(beer?.id ?? 0)
             return cell
         case 1:
-            cell.textLabel?.text = beer?.beerDescription ?? "No description"
+            cell.textLabel?.text = beer?.description ?? "No description"
             return cell
         case 2:
             cell.textLabel?.text = beer?.brewersTips ?? "No brewer's tips"
