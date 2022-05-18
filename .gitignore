@@ -8,6 +8,9 @@ GoogleService-Info.plist
 ## API Keys
 *.xcconfig
 
+## DS_Store
+.DS_Store
+
 ## User settings
 xcuserdata/
 
