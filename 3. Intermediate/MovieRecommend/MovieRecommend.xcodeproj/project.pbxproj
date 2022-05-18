@@ -21,6 +21,8 @@
 		F41F7360283259C000D7BE52 /* MainViewContentRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F735F283259C000D7BE52 /* MainViewContentRankCell.swift */; };
 		F43A578028325F7D00BC1156 /* MainViewContentMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A577F28325F7D00BC1156 /* MainViewContentMainCell.swift */; };
 		F43A578328327EAC00BC1156 /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A578228327EAC00BC1156 /* UIButton + extension.swift */; };
+		F4946B4128352E8300B000AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4946B4028352E8300B000AC /* ContentView.swift */; };
+		F4946B4328353D5300B000AC /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4946B4228353D5200B000AC /* ContentDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		F41F735F283259C000D7BE52 /* MainViewContentRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewContentRankCell.swift; sourceTree = "<group>"; };
 		F43A577F28325F7D00BC1156 /* MainViewContentMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewContentMainCell.swift; sourceTree = "<group>"; };
 		F43A578228327EAC00BC1156 /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
+		F4946B4028352E8300B000AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F4946B4228353D5200B000AC /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		F41F734C2832111A00D7BE52 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F4946B4028352E8300B000AC /* ContentView.swift */,
+				F4946B4228353D5200B000AC /* ContentDetailView.swift */,
 				F41F733B283210C700D7BE52 /* MainViewController.swift */,
 				F41F735B2832204D00D7BE52 /* MainViewContentCell.swift */,
 				F43A577F28325F7D00BC1156 /* MainViewContentMainCell.swift */,
@@ -210,11 +216,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41F733C283210C700D7BE52 /* MainViewController.swift in Sources */,
+				F4946B4128352E8300B000AC /* ContentView.swift in Sources */,
 				F43A578028325F7D00BC1156 /* MainViewContentMainCell.swift in Sources */,
 				F41F7360283259C000D7BE52 /* MainViewContentRankCell.swift in Sources */,
 				F41F735E283240AC00D7BE52 /* MainViewContentHeader.swift in Sources */,
 				F41F7338283210C700D7BE52 /* AppDelegate.swift in Sources */,
 				F41F735C2832204E00D7BE52 /* MainViewContentCell.swift in Sources */,
+				F4946B4328353D5300B000AC /* ContentDetailView.swift in Sources */,
 				F43A578328327EAC00BC1156 /* UIButton + extension.swift in Sources */,
 				F41F733A283210C700D7BE52 /* SceneDelegate.swift in Sources */,
 				F41F73522832118E00D7BE52 /* ViewRepresentable.swift in Sources */,
@@ -287,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -342,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

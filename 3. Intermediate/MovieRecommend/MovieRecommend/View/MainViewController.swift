@@ -212,26 +212,31 @@ extension MainViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sectionName = contents[indexPath.section].sectionName
         print("Test: \(sectionName)섹션의 \(indexPath.row + 1)번 째 콘텐츠")
+        let isFirstSection = indexPath.section == 0
+        let selectedItem = isFirstSection ? topItem : contents[indexPath.section].contentItem[indexPath.row]
+        let contentDetailView = ContentDetailView(item: selectedItem)
+        let hostingViewController = UIHostingController(rootView: contentDetailView)
+        self.show(hostingViewController, sender: nil)
     }
 }
 
 // SwiftUI를 활용한 미리보기
 struct MainViewController_Previews: PreviewProvider {
     static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all).previewInterfaceOrientation(.portraitUpsideDown)
+        MainViewControllerRepresentable().edgesIgnoringSafeArea(.all)
     }
+}
+
+struct MainViewControllerRepresentable: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UIViewController
     
-    struct Container: UIViewControllerRepresentable {
-        typealias UIViewControllerType = UIViewController
-        
-        func makeUIViewController(context: Context) -> UIViewController {
-            let layout = UICollectionViewLayout()
-            let mainViewController = MainViewController(collectionViewLayout: layout)
-            return UINavigationController(rootViewController: mainViewController)
-        }
-    
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        }
+    func makeUIViewController(context: Context) -> UIViewController {
+        let layout = UICollectionViewLayout()
+        let mainViewController = MainViewController(collectionViewLayout: layout)
+        return UINavigationController(rootViewController: mainViewController)
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
     }
 }
 
