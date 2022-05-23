@@ -9,7 +9,7 @@ GoogleService-Info.plist
 *.xcconfig
 
 ## DS_Store
-.DS_Store
+*.DS_Store
 
 ## User settings
 xcuserdata/
