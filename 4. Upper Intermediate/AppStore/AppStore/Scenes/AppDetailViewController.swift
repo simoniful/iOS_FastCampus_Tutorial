@@ -7,9 +7,11 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class AppDetailViewController: UIViewController, ViewRepresentable {
-    
+    private let today: Today
+        
     private let appIconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -52,12 +54,22 @@ final class AppDetailViewController: UIViewController, ViewRepresentable {
         return button
     }()
     
+    init(today: Today) {
+        self.today = today
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // dark mode 활용 - systemBackground . label
         view.backgroundColor = .systemBackground
         setupView()
         setupConstraints()
+        configureView()
     }
     
     func setupView() {
@@ -97,6 +109,14 @@ final class AppDetailViewController: UIViewController, ViewRepresentable {
             $0.height.equalTo(shareButton.snp.width)
             $0.trailing.equalToSuperview().inset(16)
             $0.centerY.equalTo(downloadButton.snp.centerY)
+        }
+    }
+    
+    func configureView() {
+        titleLabel.text = today.title
+        subtitleLabel.text = today.subTitle
+        if let imageURL = URL(string: today.imageURL) {
+            appIconImageView.kf.setImage(with: imageURL)
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 final class TodayViewCell: UICollectionViewCell, ViewRepresentable {
     
@@ -80,7 +81,12 @@ final class TodayViewCell: UICollectionViewCell, ViewRepresentable {
         }
     }
     
-    func configureCell() {
-        
+    func configureCell(today: Today) {
+        titleLabel.text = today.title
+        subtitleLabel.text = today.subTitle
+        descriptionLabel.text = today.description
+        if let imageURL = URL(string: today.imageURL) {
+            imageView.kf.setImage(with: imageURL)
+        }
     }
 }

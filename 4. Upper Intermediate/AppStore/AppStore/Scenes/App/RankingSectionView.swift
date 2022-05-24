@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class RankingSectionView: UIView, ViewRepresentable {
+    private var rankingList: [Ranking]  = []
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -49,6 +50,8 @@ final class RankingSectionView: UIView, ViewRepresentable {
         super.init(frame: frame)
         setupView()
         setupConstraints()
+        fetchData()
+        collectionView.reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -66,13 +69,14 @@ final class RankingSectionView: UIView, ViewRepresentable {
     
     func setupConstraints() {
         titleLabel.snp.makeConstraints {
-            $0.leading.top.equalToSuperview().inset(16)
+            $0.top.equalToSuperview().inset(24)
+            $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalTo(showAllAppsButton.snp.leading).offset(8)
         }
         
         showAllAppsButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalTo(titleLabel.snp.bottom)
+            $0.centerY.equalTo(titleLabel.snp.centerY)
         }
         
         // 한 화면에서 최대 표시될 부분 구성
@@ -84,22 +88,35 @@ final class RankingSectionView: UIView, ViewRepresentable {
         
         seperatorView.snp.makeConstraints {
             $0.top.equalTo(collectionView.snp.bottom).offset(16)
-            $0.bottom.leading.trailing.equalToSuperview()
+            $0.leading.bottom.trailing.equalToSuperview()
+            $0.height.equalTo(0.5)
+        }
+    }
+}
+
+private extension RankingSectionView {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "Ranking", withExtension: "plist") else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Ranking].self, from: data)
+            rankingList = result
+        } catch {
+            fatalError("ERROR: Local plist file fetching failed")
         }
     }
 }
 
 extension RankingSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return rankingList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RankingSectionViewCell.identifier, for: indexPath) as? RankingSectionViewCell else { return UICollectionViewCell() }
-   
+        cell.configureCell(ranking: rankingList[indexPath.item])
         return cell
     }
-    
 }
 
 extension RankingSectionView: UICollectionViewDelegateFlowLayout {

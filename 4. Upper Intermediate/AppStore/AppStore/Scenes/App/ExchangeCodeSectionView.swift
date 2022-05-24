@@ -40,7 +40,7 @@ final class ExchangeCodeSectionView: UIView, ViewRepresentable {
     func setupConstraints() {
         exchangeButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.bottom.equalToSuperview().inset(32)
+            $0.top.bottom.equalToSuperview().inset(16)
             $0.height.equalTo(40)
         }
     }

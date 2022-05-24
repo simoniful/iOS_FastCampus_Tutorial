@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class TodayViewController: UIViewController {
-
+    private var todayList: [Today] = []
     let todayView = TodayView()
     
     override func loadView() {
@@ -21,17 +21,34 @@ final class TodayViewController: UIViewController {
         super.viewDidLoad()
         todayView.collectionView.delegate = self
         todayView.collectionView.dataSource = self
+        fetchData()
+        todayView.collectionView.reloadData()
+    }
+}
+
+private extension TodayViewController {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Today].self, from: data)
+            todayList = result
+        } catch {
+            fatalError("ERROR: Local plist file fetching failed")
+        }
     }
 }
 
 extension TodayViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return todayList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TodayViewCell.identifier, for: indexPath) as? TodayViewCell else { return UICollectionViewCell() }
+        
+        cell.configureCell(today: todayList[indexPath.item])
         
         return cell
     }
@@ -56,7 +73,7 @@ extension TodayViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = AppDetailViewController()
+        let vc = AppDetailViewController(today: todayList[indexPath.item])
         present(vc, animated: true, completion: nil)
     }
 }

@@ -66,7 +66,6 @@ final class RankingSectionViewCell: UICollectionViewCell, ViewRepresentable {
         [imageView, titleLabel, descriptionLabel, downloadButton, inAppPurchaseInfoLabel].forEach {
             addSubview($0)
         }
-        inAppPurchaseInfoLabel.isHidden = [true, false].randomElement() ?? true
     }
     
     func setupConstraints() {
@@ -98,6 +97,12 @@ final class RankingSectionViewCell: UICollectionViewCell, ViewRepresentable {
             $0.trailing.equalTo(titleLabel.snp.trailing)
             $0.top.equalTo(titleLabel.snp.bottom).offset(4)
         }
+    }
+    
+    func configureCell(ranking: Ranking) {
+        titleLabel.text = ranking.title
+        descriptionLabel.text = ranking.description
+        inAppPurchaseInfoLabel.isHidden = !ranking.isInPurchaseApp
     }
 }
 

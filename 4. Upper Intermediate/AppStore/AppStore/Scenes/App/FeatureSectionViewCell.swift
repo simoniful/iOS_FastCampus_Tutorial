@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class FeatureSectionViewCell: UICollectionViewCell, ViewRepresentable {
     
@@ -78,6 +79,15 @@ final class FeatureSectionViewCell: UICollectionViewCell, ViewRepresentable {
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(8)
             $0.bottom.equalToSuperview().inset(8.0)
+        }
+    }
+    
+    func configureCell(feature: Feature) {
+        typeLabel.text = feature.type
+        appNameLabel.text = feature.appName
+        descriptionLabel.text = feature.description
+        if let imageURL = URL(string: feature.imageURL) {
+            imageView.kf.setImage(with: imageURL)
         }
     }
 }

@@ -68,7 +68,7 @@ final class AppView: UIView, ViewRepresentable {
         }
         
         spacingView.snp.makeConstraints {
-            $0.height.equalTo(100)
+            $0.height.equalTo(60)
         }
     }
     
