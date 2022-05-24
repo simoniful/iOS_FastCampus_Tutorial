@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TodayViewCell: UICollectionViewCell, ViewRepresentable {
+final class TodayViewCell: UICollectionViewCell, ViewRepresentable {
     
     static let identifier = "TodayViewCell"
     

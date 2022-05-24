@@ -19,6 +19,18 @@
 		F4F9295E283B711C0064A6CD /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9295D283B711C0064A6CD /* ViewRepresentable.swift */; };
 		F4F92960283B71E70064A6CD /* TodayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9295F283B71E70064A6CD /* TodayViewCell.swift */; };
 		F4F92962283B77000064A6CD /* TodayViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92961283B76FF0064A6CD /* TodayViewHeader.swift */; };
+		F4F92964283BC3EF0064A6CD /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92963283BC3EF0064A6CD /* AppDetailViewController.swift */; };
+		F4F92966283BCF680064A6CD /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92965283BCF680064A6CD /* TodayView.swift */; };
+		F4F92968283BD1020064A6CD /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92967283BD1020064A6CD /* AppView.swift */; };
+		F4F9296A283BDAA30064A6CD /* FeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92969283BDAA30064A6CD /* FeatureSectionView.swift */; };
+		F4F9296C283BDCA60064A6CD /* FeatureSectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9296B283BDCA60064A6CD /* FeatureSectionViewCell.swift */; };
+		F4F9296E283BE39C0064A6CD /* SeperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9296D283BE39C0064A6CD /* SeperatorView.swift */; };
+		F4F92972283CDDAA0064A6CD /* RankingSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92971283CDDAA0064A6CD /* RankingSectionView.swift */; };
+		F4F92974283CE75F0064A6CD /* RankingSectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92973283CE75F0064A6CD /* RankingSectionViewCell.swift */; };
+		F4F92976283CF0620064A6CD /* ExchangeCodeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F92975283CF0620064A6CD /* ExchangeCodeSectionView.swift */; };
+		F4F9297A283CFDE90064A6CD /* Feature.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F92977283CFDE80064A6CD /* Feature.plist */; };
+		F4F9297B283CFDE90064A6CD /* Today.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F92978283CFDE90064A6CD /* Today.plist */; };
+		F4F9297C283CFDE90064A6CD /* RankingFeature.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F92979283CFDE90064A6CD /* RankingFeature.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +46,18 @@
 		F4F9295D283B711C0064A6CD /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		F4F9295F283B71E70064A6CD /* TodayViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewCell.swift; sourceTree = "<group>"; };
 		F4F92961283B76FF0064A6CD /* TodayViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewHeader.swift; sourceTree = "<group>"; };
+		F4F92963283BC3EF0064A6CD /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		F4F92965283BCF680064A6CD /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		F4F92967283BD1020064A6CD /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		F4F92969283BDAA30064A6CD /* FeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionView.swift; sourceTree = "<group>"; };
+		F4F9296B283BDCA60064A6CD /* FeatureSectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionViewCell.swift; sourceTree = "<group>"; };
+		F4F9296D283BE39C0064A6CD /* SeperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeperatorView.swift; sourceTree = "<group>"; };
+		F4F92971283CDDAA0064A6CD /* RankingSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingSectionView.swift; sourceTree = "<group>"; };
+		F4F92973283CE75F0064A6CD /* RankingSectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingSectionViewCell.swift; sourceTree = "<group>"; };
+		F4F92975283CF0620064A6CD /* ExchangeCodeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeSectionView.swift; sourceTree = "<group>"; };
+		F4F92977283CFDE80064A6CD /* Feature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feature.plist; sourceTree = "<group>"; };
+		F4F92978283CFDE90064A6CD /* Today.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Today.plist; sourceTree = "<group>"; };
+		F4F92979283CFDE90064A6CD /* RankingFeature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RankingFeature.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +96,9 @@
 				F4F92956283B6EC20064A6CD /* Resources */,
 				F4F9295C283B71040064A6CD /* Protocol */,
 				F4F92946283B490E0064A6CD /* Info.plist */,
+				F4F92977283CFDE80064A6CD /* Feature.plist */,
+				F4F92979283CFDE90064A6CD /* RankingFeature.plist */,
+				F4F92978283CFDE90064A6CD /* Today.plist */,
 			);
 			path = AppStore;
 			sourceTree = "<group>";
@@ -93,6 +120,7 @@
 				F4F9293C283B490C0064A6CD /* TabBarController.swift */,
 				F4F92958283B6EE40064A6CD /* Today */,
 				F4F92959283B6F2E0064A6CD /* App */,
+				F4F92963283BC3EF0064A6CD /* AppDetailViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -100,6 +128,7 @@
 		F4F92958283B6EE40064A6CD /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				F4F92965283BCF680064A6CD /* TodayView.swift */,
 				F4F9295F283B71E70064A6CD /* TodayViewCell.swift */,
 				F4F92961283B76FF0064A6CD /* TodayViewHeader.swift */,
 				F4F92954283B6E920064A6CD /* TodayViewController.swift */,
@@ -110,7 +139,14 @@
 		F4F92959283B6F2E0064A6CD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F4F92967283BD1020064A6CD /* AppView.swift */,
 				F4F9295A283B6F660064A6CD /* AppViewController.swift */,
+				F4F92969283BDAA30064A6CD /* FeatureSectionView.swift */,
+				F4F9296B283BDCA60064A6CD /* FeatureSectionViewCell.swift */,
+				F4F92971283CDDAA0064A6CD /* RankingSectionView.swift */,
+				F4F92973283CE75F0064A6CD /* RankingSectionViewCell.swift */,
+				F4F92975283CF0620064A6CD /* ExchangeCodeSectionView.swift */,
+				F4F9296D283BE39C0064A6CD /* SeperatorView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -189,7 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F9297A283CFDE90064A6CD /* Feature.plist in Resources */,
+				F4F9297C283CFDE90064A6CD /* RankingFeature.plist in Resources */,
 				F4F92945283B490E0064A6CD /* LaunchScreen.storyboard in Resources */,
+				F4F9297B283CFDE90064A6CD /* Today.plist in Resources */,
 				F4F92942283B490E0064A6CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,14 +240,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F92964283BC3EF0064A6CD /* AppDetailViewController.swift in Sources */,
+				F4F92974283CE75F0064A6CD /* RankingSectionViewCell.swift in Sources */,
+				F4F9296E283BE39C0064A6CD /* SeperatorView.swift in Sources */,
 				F4F9295B283B6F660064A6CD /* AppViewController.swift in Sources */,
+				F4F9296C283BDCA60064A6CD /* FeatureSectionViewCell.swift in Sources */,
 				F4F92955283B6E920064A6CD /* TodayViewController.swift in Sources */,
 				F4F9293D283B490C0064A6CD /* TabBarController.swift in Sources */,
+				F4F92968283BD1020064A6CD /* AppView.swift in Sources */,
 				F4F92939283B490C0064A6CD /* AppDelegate.swift in Sources */,
+				F4F92966283BCF680064A6CD /* TodayView.swift in Sources */,
 				F4F9293B283B490C0064A6CD /* SceneDelegate.swift in Sources */,
+				F4F92976283CF0620064A6CD /* ExchangeCodeSectionView.swift in Sources */,
 				F4F92962283B77000064A6CD /* TodayViewHeader.swift in Sources */,
 				F4F92960283B71E70064A6CD /* TodayViewCell.swift in Sources */,
 				F4F9295E283B711C0064A6CD /* ViewRepresentable.swift in Sources */,
+				F4F9296A283BDAA30064A6CD /* FeatureSectionView.swift in Sources */,
+				F4F92972283CDDAA0064A6CD /* RankingSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
