@@ -51,6 +51,7 @@ final class AppDetailViewController: UIViewController, ViewRepresentable {
         let button = UIButton()
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.tintColor = .systemBlue
+        button.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
         return button
     }()
     
@@ -118,6 +119,13 @@ final class AppDetailViewController: UIViewController, ViewRepresentable {
         if let imageURL = URL(string: today.imageURL) {
             appIconImageView.kf.setImage(with: imageURL)
         }
+    }
+    
+    @objc func didTapShareButton() {
+        // 공유하고자 하는 대상
+        let activityItems: [Any] = [today.title, today.description]
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        present(activityViewController, animated: true)
     }
 }
 
