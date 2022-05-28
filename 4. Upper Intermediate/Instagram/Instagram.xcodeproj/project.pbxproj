@@ -21,6 +21,7 @@
 		F4469F572842582900D55A57 /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F562842582800D55A57 /* UIButton + extension.swift */; };
 		F4469F5D28425AF700D55A57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F5C28425AF700D55A57 /* ProfileView.swift */; };
 		F4469F5F2842600E00D55A57 /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F5E2842600E00D55A57 /* ProfileDataView.swift */; };
+		F4469F612842707A00D55A57 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F602842707A00D55A57 /* ProfileViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F4469F562842582800D55A57 /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
 		F4469F5C28425AF700D55A57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F4469F5E2842600E00D55A57 /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
+		F4469F602842707A00D55A57 /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F4469F5C28425AF700D55A57 /* ProfileView.swift */,
+				F4469F602842707A00D55A57 /* ProfileViewCell.swift */,
 				F4469F5E2842600E00D55A57 /* ProfileDataView.swift */,
 				F4469F372842158400D55A57 /* ProfileViewController.swift */,
 			);
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4469F612842707A00D55A57 /* ProfileViewCell.swift in Sources */,
 				F4469F382842158400D55A57 /* ProfileViewController.swift in Sources */,
 				F4469F4C284216CA00D55A57 /* TabBarController.swift in Sources */,
 				F4469F5D28425AF700D55A57 /* ProfileView.swift in Sources */,

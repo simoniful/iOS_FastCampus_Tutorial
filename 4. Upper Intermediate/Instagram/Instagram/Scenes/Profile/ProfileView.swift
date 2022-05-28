@@ -77,6 +77,16 @@ class ProfileView: UIView, ViewRepresentable {
         return stackView
     }()
     
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 0.5
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(ProfileViewCell.self, forCellWithReuseIdentifier: ProfileViewCell.identifier)
+        return collectionView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -89,7 +99,7 @@ class ProfileView: UIView, ViewRepresentable {
     }
     
     func setupView() {
-        [profileImageView, dataStack, nameLabel, descriptionLabel, buttonStack].forEach {
+        [profileImageView, dataStack, nameLabel, descriptionLabel, buttonStack, collectionView].forEach {
             addSubview($0)
         }
     }
@@ -126,6 +136,13 @@ class ProfileView: UIView, ViewRepresentable {
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(12.0)
             $0.leading.equalTo(nameLabel.snp.leading)
             $0.trailing.equalTo(nameLabel.snp.trailing)
+        }
+        
+        collectionView.snp.makeConstraints { 
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.top.equalTo(buttonStack.snp.bottom).offset(16.0)
+            $0.bottom.equalToSuperview()
         }
     }
 }
