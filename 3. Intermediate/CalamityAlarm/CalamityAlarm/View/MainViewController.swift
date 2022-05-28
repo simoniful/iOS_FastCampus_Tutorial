@@ -19,7 +19,5 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         print(API_KEY)
     }
-
-
 }
 

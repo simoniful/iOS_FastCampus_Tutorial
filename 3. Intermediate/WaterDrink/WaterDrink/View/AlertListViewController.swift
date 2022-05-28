@@ -65,7 +65,6 @@ class AlertListViewController: UIViewController {
               let alerts = try? PropertyListDecoder().decode([Alert].self, from: data) else { return [] }
         return alerts
     }
-    
 }
 
 extension AlertListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -105,10 +104,10 @@ extension AlertListViewController: UITableViewDelegate, UITableViewDataSource {
         switch editingStyle {
         case .delete:
             // 노티피케이션 삭제 구현
-            // 테이블 뷰 배열과 내부 저장소 상태를 동기화 
+            // 테이블 뷰 배열과 내부 저장소 상태를 동기화
+            userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [alerts[indexPath.row].id])
             self.alerts.remove(at: indexPath.row)
             UserDefaults.standard.set(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
-            userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [alerts[indexPath.row].id])
             self.alertListView.tableView.reloadData()
             return
         default:
