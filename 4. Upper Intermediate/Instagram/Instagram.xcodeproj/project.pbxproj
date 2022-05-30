@@ -22,6 +22,8 @@
 		F4469F5D28425AF700D55A57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F5C28425AF700D55A57 /* ProfileView.swift */; };
 		F4469F5F2842600E00D55A57 /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F5E2842600E00D55A57 /* ProfileDataView.swift */; };
 		F4469F612842707A00D55A57 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F602842707A00D55A57 /* ProfileViewCell.swift */; };
+		F4469F64284478BF00D55A57 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F63284478BF00D55A57 /* UploadViewController.swift */; };
+		F4469F662844791300D55A57 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F652844791300D55A57 /* UploadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		F4469F5C28425AF700D55A57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F4469F5E2842600E00D55A57 /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
 		F4469F602842707A00D55A57 /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
+		F4469F63284478BF00D55A57 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		F4469F652844791300D55A57 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 				F4469F4F28421DE900D55A57 /* FeedView.swift */,
 				F4469F54284220CA00D55A57 /* FeedViewCell.swift */,
 				F4469F4D2842190A00D55A57 /* FeedViewController.swift */,
+				F4469F62284478A200D55A57 /* Upload */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -139,6 +144,15 @@
 				F4469F372842158400D55A57 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F4469F62284478A200D55A57 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				F4469F63284478BF00D55A57 /* UploadViewController.swift */,
+				F4469F652844791300D55A57 /* UploadView.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4469F64284478BF00D55A57 /* UploadViewController.swift in Sources */,
 				F4469F612842707A00D55A57 /* ProfileViewCell.swift in Sources */,
 				F4469F382842158400D55A57 /* ProfileViewController.swift in Sources */,
 				F4469F4C284216CA00D55A57 /* TabBarController.swift in Sources */,
@@ -227,6 +242,7 @@
 				F4469F342842158400D55A57 /* AppDelegate.swift in Sources */,
 				F4469F5F2842600E00D55A57 /* ProfileDataView.swift in Sources */,
 				F4469F5028421DE900D55A57 /* FeedView.swift in Sources */,
+				F4469F662844791300D55A57 /* UploadView.swift in Sources */,
 				F4469F362842158400D55A57 /* SceneDelegate.swift in Sources */,
 				F4469F572842582900D55A57 /* UIButton + extension.swift in Sources */,
 			);

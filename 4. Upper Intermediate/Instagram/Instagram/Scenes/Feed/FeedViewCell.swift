@@ -103,7 +103,8 @@ final class FeedViewCell: UITableViewCell, ViewRepresentable {
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.top.equalTo(safeAreaLayoutGuide)
-            $0.height.equalTo(postImageView.snp.width)
+            // $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.height.equalTo(UIScreen.main.bounds.width)
         }
 
         likeButton.snp.makeConstraints {
