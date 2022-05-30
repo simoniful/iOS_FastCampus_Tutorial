@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class FeedViewController: UIViewController {
+    // MARK: - Property
     let feedView = FeedView()
     private lazy var imagePickerController: UIImagePickerController = {
         let imagePickerController = UIImagePickerController()
@@ -31,6 +32,7 @@ final class FeedViewController: UIViewController {
     }
 }
 
+// MARK: - Navigation setup
 private extension FeedViewController {
     func setNavigationBar() {
         navigationItem.title = "Instagram"
@@ -48,6 +50,7 @@ private extension FeedViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -60,6 +63,7 @@ extension FeedViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension FeedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectedImage: UIImage?

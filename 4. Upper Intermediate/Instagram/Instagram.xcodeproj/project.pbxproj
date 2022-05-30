@@ -149,8 +149,8 @@
 		F4469F62284478A200D55A57 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
-				F4469F63284478BF00D55A57 /* UploadViewController.swift */,
 				F4469F652844791300D55A57 /* UploadView.swift */,
+				F4469F63284478BF00D55A57 /* UploadViewController.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";

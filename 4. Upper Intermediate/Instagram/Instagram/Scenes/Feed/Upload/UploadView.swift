@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class UploadView: UIView, ViewRepresentable {
+    // MARK: - UI Components
     let imageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -23,6 +24,7 @@ final class UploadView: UIView, ViewRepresentable {
         return textView
     }()
     
+    // MARK: - Initailizing
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -33,6 +35,7 @@ final class UploadView: UIView, ViewRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI setup
     func setupView() {
         [imageView, textView].forEach {
             addSubview($0)
@@ -58,6 +61,7 @@ final class UploadView: UIView, ViewRepresentable {
     }
 }
 
+// MARK: - UITextViewDelegate
 extension UploadView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         guard textView.textColor == .secondaryLabel else { return }

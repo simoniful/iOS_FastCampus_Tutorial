@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class ProfileView: UIView, ViewRepresentable {
-    
+    // MARK: - UI Components
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 40.0
@@ -64,9 +64,7 @@ class ProfileView: UIView, ViewRepresentable {
     }()
     
     private let postDataView = ProfileDataView(title: "게시물", count: 123)
-    
     private let followerDataView = ProfileDataView(title: "팔로워", count: 2000)
-    
     private let followingDataView = ProfileDataView(title: "팔로잉", count: 1)
     
     private lazy var dataStack: UIStackView = {
@@ -87,6 +85,7 @@ class ProfileView: UIView, ViewRepresentable {
         return collectionView
     }()
     
+    // MARK: - Initailizing
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -94,10 +93,10 @@ class ProfileView: UIView, ViewRepresentable {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI setup
     func setupView() {
         [profileImageView, dataStack, nameLabel, descriptionLabel, buttonStack, collectionView].forEach {
             addSubview($0)

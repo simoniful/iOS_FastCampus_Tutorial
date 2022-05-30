@@ -9,9 +9,11 @@ import UIKit
 import SnapKit
 
 final class ProfileDataView: UIView, ViewRepresentable {
+    // MARK: - Property
     private let title: String
     private let count: Int
     
+    // MARK: - UI Components
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14.0, weight: .medium)
@@ -35,6 +37,7 @@ final class ProfileDataView: UIView, ViewRepresentable {
         return stackView
     }()
     
+    // MARK: - Initailizing
     init(title: String, count: Int) {
         self.title = title
         self.count = count
@@ -44,9 +47,10 @@ final class ProfileDataView: UIView, ViewRepresentable {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI setup
     func setupView() {
         addSubview(labelStack)
     }

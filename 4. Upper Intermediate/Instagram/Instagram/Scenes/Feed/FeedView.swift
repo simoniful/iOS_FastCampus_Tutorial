@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class FeedView: UIView, ViewRepresentable {
+    // MARK: - UI Components
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.backgroundColor = .systemBackground
@@ -17,6 +18,7 @@ class FeedView: UIView, ViewRepresentable {
         return tableView
     }()
     
+    // MARK: - Initailizing
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -24,10 +26,10 @@ class FeedView: UIView, ViewRepresentable {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI setup
     func setupView() {
         addSubview(tableView)
     }
@@ -37,6 +39,4 @@ class FeedView: UIView, ViewRepresentable {
             $0.edges.equalToSuperview()
         }
     }
-    
-    
 }

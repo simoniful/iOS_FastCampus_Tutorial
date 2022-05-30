@@ -8,9 +8,11 @@
 import UIKit
 
 final class UploadViewController: UIViewController {
+    // MARK: - Property
     private let uploadImage: UIImage
     let uploadView = UploadView()
     
+    // MARK: - Initializing
     init(uploadImage: UIImage) {
         self.uploadImage = uploadImage
         super.init(nibName: nil, bundle: nil)
@@ -33,6 +35,7 @@ final class UploadViewController: UIViewController {
     }
 }
 
+// MARK: - Navigation setup
 private extension UploadViewController {
     func setNavigationBar() {
         navigationItem.title = "새 게시물"

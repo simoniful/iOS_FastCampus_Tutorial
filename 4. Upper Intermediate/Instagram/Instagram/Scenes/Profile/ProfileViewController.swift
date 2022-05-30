@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class ProfileViewController: UIViewController {
+    // MARK: - Property
     let profileView = ProfileView()
     
     override func loadView() {
@@ -24,6 +25,7 @@ final class ProfileViewController: UIViewController {
     }
 }
 
+// MARK: - Navigation setup
 private extension ProfileViewController {
     func setNavigationBar() {
         navigationItem.title = "UserName"
@@ -49,6 +51,7 @@ private extension ProfileViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
@@ -61,6 +64,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = collectionView.frame.width / 3 - 1.0

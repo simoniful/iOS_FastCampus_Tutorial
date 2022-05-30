@@ -9,6 +9,7 @@ import SnapKit
 import UIKit
 
 final class FeedViewCell: UITableViewCell, ViewRepresentable {
+    // MARK: - UI Components
     static let identifier = "FeedViewCell"
 
     private lazy var postImageView: UIImageView = {
@@ -69,7 +70,8 @@ final class FeedViewCell: UITableViewCell, ViewRepresentable {
 
         return label
     }()
-
+    
+    // MARK: - Initailizing
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -80,6 +82,7 @@ final class FeedViewCell: UITableViewCell, ViewRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI setup
     func setupView() {
         [
             postImageView,

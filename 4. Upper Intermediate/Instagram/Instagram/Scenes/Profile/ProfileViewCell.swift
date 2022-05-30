@@ -11,12 +11,14 @@ import SnapKit
 final class ProfileViewCell: UICollectionViewCell, ViewRepresentable {
     static let identifier = "ProfileViewCell"
     
+    // MARK: - UI Components
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .tertiaryLabel
         return imageView
     }()
     
+    // MARK: - Initailizing
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -27,6 +29,7 @@ final class ProfileViewCell: UICollectionViewCell, ViewRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI setup
     func setupView() {
         addSubview(imageView)
     }
