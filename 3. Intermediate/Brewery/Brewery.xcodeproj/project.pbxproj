@@ -17,6 +17,9 @@
 		F43A57AE2833B84600BC1156 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A57AD2833B84600BC1156 /* Beer.swift */; };
 		F43A57B12833C74C00BC1156 /* MainListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A57B02833C74C00BC1156 /* MainListCellView.swift */; };
 		F43A57B32833CD3300BC1156 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A57B22833CD3300BC1156 /* DetailViewController.swift */; };
+		F4469F682845C1C300D55A57 /* DetailStretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F672845C1C300D55A57 /* DetailStretchyHeaderView.swift */; };
+		F4469F6A2845C23B00D55A57 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F692845C23B00D55A57 /* ViewRepresentable.swift */; };
+		F4469F6C2845D05900D55A57 /* DetailHeaderDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4469F6B2845D05900D55A57 /* DetailHeaderDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		F43A57AD2833B84600BC1156 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		F43A57B02833C74C00BC1156 /* MainListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCellView.swift; sourceTree = "<group>"; };
 		F43A57B22833CD3300BC1156 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4469F672845C1C300D55A57 /* DetailStretchyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStretchyHeaderView.swift; sourceTree = "<group>"; };
+		F4469F692845C23B00D55A57 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
+		F4469F6B2845D05900D55A57 /* DetailHeaderDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		F43A57A52833971A00BC1156 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				F4469F692845C23B00D55A57 /* ViewRepresentable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -105,6 +112,8 @@
 				F43A57B02833C74C00BC1156 /* MainListCellView.swift */,
 				F43A5794283396FC00BC1156 /* MainListViewController.swift */,
 				F43A57B22833CD3300BC1156 /* DetailViewController.swift */,
+				F4469F672845C1C300D55A57 /* DetailStretchyHeaderView.swift */,
+				F4469F6B2845D05900D55A57 /* DetailHeaderDescriptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,7 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43A5795283396FC00BC1156 /* MainListViewController.swift in Sources */,
+				F4469F6A2845C23B00D55A57 /* ViewRepresentable.swift in Sources */,
+				F4469F6C2845D05900D55A57 /* DetailHeaderDescriptionView.swift in Sources */,
 				F43A5791283396FC00BC1156 /* AppDelegate.swift in Sources */,
+				F4469F682845C1C300D55A57 /* DetailStretchyHeaderView.swift in Sources */,
 				F43A57B12833C74C00BC1156 /* MainListCellView.swift in Sources */,
 				F43A57B32833CD3300BC1156 /* DetailViewController.swift in Sources */,
 				F43A5793283396FC00BC1156 /* SceneDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class DetailViewController: UITableViewController {
     var beer: Beer?
@@ -20,12 +21,10 @@ class DetailViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DetailListCell")
         tableView.rowHeight = UITableView.automaticDimension
         
-        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
-        let headerView = UIImageView(frame: frame)
+        let frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300)
+        let headerView = DetailStretchyHeaderView(frame: frame)
         let imageURL = URL(string: beer?.imageURL ?? "")
-        
-        headerView.contentMode = .scaleAspectFit
-        headerView.kf.setImage(with: imageURL, placeholder: UIImage(named: "beer_icon"))
+        headerView.imageView.kf.setImage(with: imageURL, placeholder: UIImage(named: "beer_icon"))
         
         tableView.tableHeaderView = headerView
     }
@@ -83,4 +82,10 @@ extension DetailViewController {
             return cell
         }
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let header = self.tableView.tableHeaderView as? DetailStretchyHeaderView else { return }
+        header.scrollViewDidScroll(scrollView: tableView)
+    }
 }
+
