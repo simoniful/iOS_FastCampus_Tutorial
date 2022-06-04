@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/simon/Desktop/FastCampus/iOS_FastCampus_Tutorial/4. Upper Intermediate/GitHub/GitHub/RepositoryListViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:GitHub.xcodeproj">
    </FileRef>
    <FileRef
