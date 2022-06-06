@@ -34,6 +34,7 @@
 		F4F16DC52849B58300FBCC58 /* FilteringOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilteringOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F4F16DC62849C11000FBCC58 /* TransformingOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformingOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F4F16DD3284DBBDB00FBCC58 /* CombiningOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombiningOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F4F16DD4284DE0EB00FBCC58 /* TimebasedOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TimebasedOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 				F4F16DC52849B58300FBCC58 /* FilteringOperator.playground */,
 				F4F16DC62849C11000FBCC58 /* TransformingOperator.playground */,
 				F4F16DD3284DBBDB00FBCC58 /* CombiningOperator.playground */,
+				F4F16DD4284DE0EB00FBCC58 /* TimebasedOperator.playground */,
 				F4469F9C284862D900D55A57 /* RxSwiftPractice */,
 				F4469F9B284862D900D55A57 /* Products */,
 				4A9ADE0D124B55C98872AC28 /* Pods */,
