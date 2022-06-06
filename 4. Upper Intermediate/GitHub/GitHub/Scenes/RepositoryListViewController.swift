@@ -42,9 +42,11 @@ class RepositoryListViewController: UITableViewController {
     
     // MARK: - Data Fetch with Rx
     func fetchRepositories(of organiztion: String) {
+        // 만약 페이지네이션을 구현한다고 한다면 관리되는 변수 값을 하나 두고 인자로 받아서 활용
+        // 원하는 index 셀에 다 왔을 경우 기존의 value에 + 하는 경우로 데이터를 추가하고 다시금 onNext
         Observable.from([organiztion])
             .map { organiztion -> URL in
-                return URL(string: "https://api.github.com/orgs/\(organiztion)/repos")!
+                return URL(string: "https://api.github.com/orgs/\(organiztion)/repos?page=\(1)")!
             }
             .map { url -> URLRequest in
                 var request = URLRequest(url: url)
