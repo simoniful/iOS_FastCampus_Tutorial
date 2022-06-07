@@ -53,7 +53,7 @@ class ResultListCell: UITableViewCell, ViewRepresentable {
         thumbnailImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.top.trailing.bottom.equalToSuperview().inset(8)
-            $0.width.height.equalTo(80)
+            $0.width.equalTo(80)
         }
         
         nameLabel.snp.makeConstraints {

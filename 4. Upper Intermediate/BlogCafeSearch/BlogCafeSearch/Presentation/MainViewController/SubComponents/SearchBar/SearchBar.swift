@@ -49,7 +49,6 @@ class SearchBar: UISearchBar {
             .filter{ !$0.isEmpty }
             .distinctUntilChanged()
         
-        
     }
     
     func attribute() {

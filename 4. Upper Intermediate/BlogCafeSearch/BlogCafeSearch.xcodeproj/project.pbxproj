@@ -24,6 +24,10 @@
 		F4F16E11284E44D200FBCC58 /* ResultListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E10284E44D200FBCC58 /* ResultListCell.swift */; };
 		F4F16E14284E450B00FBCC58 /* ResultListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E13284E450B00FBCC58 /* ResultListCellData.swift */; };
 		F4F16E1B284E4DE000FBCC58 /* AlertActionConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E1A284E4DE000FBCC58 /* AlertActionConvertible.swift */; };
+		F4F16E1E284EF91400FBCC58 /* DaumKakaoBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E1D284EF91400FBCC58 /* DaumKakaoBlog.swift */; };
+		F4F16E21284EFBEC00FBCC58 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E20284EFBEC00FBCC58 /* Date+.swift */; };
+		F4F16E24284EFE0600FBCC58 /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E23284EFE0600FBCC58 /* SearchBlogAPI.swift */; };
+		F4F16E26284EFF0C00FBCC58 /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E25284EFF0C00FBCC58 /* SearchBlogNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,11 @@
 		F4F16E10284E44D200FBCC58 /* ResultListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListCell.swift; sourceTree = "<group>"; };
 		F4F16E13284E450B00FBCC58 /* ResultListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListCellData.swift; sourceTree = "<group>"; };
 		F4F16E1A284E4DE000FBCC58 /* AlertActionConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionConvertible.swift; sourceTree = "<group>"; };
+		F4F16E1C284EF5A300FBCC58 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		F4F16E1D284EF91400FBCC58 /* DaumKakaoBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaumKakaoBlog.swift; sourceTree = "<group>"; };
+		F4F16E20284EFBEC00FBCC58 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		F4F16E23284EFE0600FBCC58 /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
+		F4F16E25284EFF0C00FBCC58 /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 		F4F16DD5284E3A5A00FBCC58 = {
 			isa = PBXGroup;
 			children = (
+				F4F16E1C284EF5A300FBCC58 /* Secrets.xcconfig */,
 				F4F16DE0284E3A5A00FBCC58 /* BlogCafeSearch */,
 				F4F16DDF284E3A5A00FBCC58 /* Products */,
 			);
@@ -79,8 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				F4F16E03284E3C0C00FBCC58 /* Presentation */,
+				F4F16E22284EFDE900FBCC58 /* Network */,
 				F4F16E12284E44E200FBCC58 /* Entities */,
 				F4F16E06284E3C4D00FBCC58 /* Protocols */,
+				F4F16E1F284EFBD000FBCC58 /* Extensions */,
 				F4F16E02284E3BFB00FBCC58 /* Resources */,
 				F4F16DEF284E3A5D00FBCC58 /* Info.plist */,
 			);
@@ -118,6 +130,7 @@
 		F4F16E12284E44E200FBCC58 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F4F16E1D284EF91400FBCC58 /* DaumKakaoBlog.swift */,
 				F4F16E13284E450B00FBCC58 /* ResultListCellData.swift */,
 			);
 			path = Entities;
@@ -165,6 +178,23 @@
 				F4F16E10284E44D200FBCC58 /* ResultListCell.swift */,
 			);
 			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		F4F16E1F284EFBD000FBCC58 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4F16E20284EFBEC00FBCC58 /* Date+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4F16E22284EFDE900FBCC58 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4F16E23284EFE0600FBCC58 /* SearchBlogAPI.swift */,
+				F4F16E25284EFF0C00FBCC58 /* SearchBlogNetwork.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,11 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F16E1E284EF91400FBCC58 /* DaumKakaoBlog.swift in Sources */,
 				F4F16E0D284E428B00FBCC58 /* FilterView.swift in Sources */,
 				F4F16DE6284E3A5A00FBCC58 /* MainViewController.swift in Sources */,
+				F4F16E21284EFBEC00FBCC58 /* Date+.swift in Sources */,
+				F4F16E24284EFE0600FBCC58 /* SearchBlogAPI.swift in Sources */,
 				F4F16E1B284E4DE000FBCC58 /* AlertActionConvertible.swift in Sources */,
 				F4F16DE2284E3A5A00FBCC58 /* AppDelegate.swift in Sources */,
 				F4F16E14284E450B00FBCC58 /* ResultListCellData.swift in Sources */,
+				F4F16E26284EFF0C00FBCC58 /* SearchBlogNetwork.swift in Sources */,
 				F4F16DE4284E3A5A00FBCC58 /* SceneDelegate.swift in Sources */,
 				F4F16E09284E3C6900FBCC58 /* ViewRepresentable.swift in Sources */,
 				F4F16E11284E44D200FBCC58 /* ResultListCell.swift in Sources */,
@@ -392,6 +426,7 @@
 		};
 		F4F16DF3284E3A5D00FBCC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F16E1C284EF5A300FBCC58 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,6 +455,7 @@
 		};
 		F4F16DF4284E3A5D00FBCC58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F16E1C284EF5A300FBCC58 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
