@@ -11,10 +11,8 @@ import RxCocoa
 import SnapKit
 
 class TitleTextFieldCell: UITableViewCell {
-    let disposeBag = DisposeBag()
-    
     static let identifier = "TitleTextFieldCell"
-    
+    let disposeBag = DisposeBag()
     let titleInputField = UITextField()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,7 +37,7 @@ class TitleTextFieldCell: UITableViewCell {
     }
     
     private func layout() {
-        addSubview(titleInputField)
+        contentView.addSubview(titleInputField)
         
         titleInputField.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(20)

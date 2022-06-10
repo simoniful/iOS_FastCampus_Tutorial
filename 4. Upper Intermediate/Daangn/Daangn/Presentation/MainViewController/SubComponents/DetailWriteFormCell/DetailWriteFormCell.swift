@@ -43,7 +43,7 @@ class DetailWriteFormCell: UITableViewCell {
     }
     
     private func layout() {
-        addSubview(contentInputView)
+        contentView.addSubview(contentInputView)
         
         contentInputView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(15)
