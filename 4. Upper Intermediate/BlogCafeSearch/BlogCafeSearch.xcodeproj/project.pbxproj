@@ -28,6 +28,11 @@
 		F4F16E21284EFBEC00FBCC58 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E20284EFBEC00FBCC58 /* Date+.swift */; };
 		F4F16E24284EFE0600FBCC58 /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E23284EFE0600FBCC58 /* SearchBlogAPI.swift */; };
 		F4F16E26284EFF0C00FBCC58 /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F16E25284EFF0C00FBCC58 /* SearchBlogNetwork.swift */; };
+		F4FE62382851C56F000645B9 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE62372851C56F000645B9 /* SearchBarViewModel.swift */; };
+		F4FE623A2851C704000645B9 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE62392851C704000645B9 /* FilterViewModel.swift */; };
+		F4FE623C2851C79C000645B9 /* ResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE623B2851C79C000645B9 /* ResultListViewModel.swift */; };
+		F4FE623E2852E5C6000645B9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE623D2852E5C6000645B9 /* MainViewModel.swift */; };
+		F4FE62402852EEE8000645B9 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE623F2852EEE8000645B9 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		F4F16E20284EFBEC00FBCC58 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F4F16E23284EFE0600FBCC58 /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
 		F4F16E25284EFF0C00FBCC58 /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
+		F4FE62372851C56F000645B9 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
+		F4FE62392851C704000645B9 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		F4FE623B2851C79C000645B9 /* ResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewModel.swift; sourceTree = "<group>"; };
+		F4FE623D2852E5C6000645B9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F4FE623F2852EEE8000645B9 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				F4F16DE5284E3A5A00FBCC58 /* MainViewController.swift */,
+				F4FE623D2852E5C6000645B9 /* MainViewModel.swift */,
+				F4FE623F2852EEE8000645B9 /* MainModel.swift */,
 				F4F16E15284E4C0E00FBCC58 /* SubComponents */,
 			);
 			path = MainViewController;
@@ -158,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F16E0A284E3DBD00FBCC58 /* SearchBar.swift */,
+				F4FE62372851C56F000645B9 /* SearchBarViewModel.swift */,
 			);
 			path = SearchBar;
 			sourceTree = "<group>";
@@ -166,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F16E0E284E44BB00FBCC58 /* ResultList.swift */,
+				F4FE623B2851C79C000645B9 /* ResultListViewModel.swift */,
 				F4F16E19284E4C7E00FBCC58 /* SubComponents */,
 			);
 			path = ResultList;
@@ -175,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F16E0C284E428B00FBCC58 /* FilterView.swift */,
+				F4FE62392851C704000645B9 /* FilterViewModel.swift */,
 				F4F16E10284E44D200FBCC58 /* ResultListCell.swift */,
 			);
 			path = SubComponents;
@@ -281,18 +296,23 @@
 			files = (
 				F4F16E1E284EF91400FBCC58 /* DaumKakaoBlog.swift in Sources */,
 				F4F16E0D284E428B00FBCC58 /* FilterView.swift in Sources */,
+				F4FE623A2851C704000645B9 /* FilterViewModel.swift in Sources */,
 				F4F16DE6284E3A5A00FBCC58 /* MainViewController.swift in Sources */,
 				F4F16E21284EFBEC00FBCC58 /* Date+.swift in Sources */,
 				F4F16E24284EFE0600FBCC58 /* SearchBlogAPI.swift in Sources */,
+				F4FE62402852EEE8000645B9 /* MainModel.swift in Sources */,
 				F4F16E1B284E4DE000FBCC58 /* AlertActionConvertible.swift in Sources */,
 				F4F16DE2284E3A5A00FBCC58 /* AppDelegate.swift in Sources */,
 				F4F16E14284E450B00FBCC58 /* ResultListCellData.swift in Sources */,
 				F4F16E26284EFF0C00FBCC58 /* SearchBlogNetwork.swift in Sources */,
 				F4F16DE4284E3A5A00FBCC58 /* SceneDelegate.swift in Sources */,
 				F4F16E09284E3C6900FBCC58 /* ViewRepresentable.swift in Sources */,
+				F4FE623C2851C79C000645B9 /* ResultListViewModel.swift in Sources */,
 				F4F16E11284E44D200FBCC58 /* ResultListCell.swift in Sources */,
+				F4FE62382851C56F000645B9 /* SearchBarViewModel.swift in Sources */,
 				F4F16E0F284E44BB00FBCC58 /* ResultList.swift in Sources */,
 				F4F16E0B284E3DBD00FBCC58 /* SearchBar.swift in Sources */,
+				F4FE623E2852E5C6000645B9 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

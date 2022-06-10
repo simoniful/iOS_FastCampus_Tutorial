@@ -13,12 +13,10 @@ import SnapKit
 class SearchBar: UISearchBar {
     let disposeBag = DisposeBag()
     let searchButton = UIButton()
-    let searchButtonTapped = PublishRelay<Void>()
-    var shouldLoadResult = Observable<String>.of("")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        bind()
+        
         attribute()
         layout()
     }
@@ -27,7 +25,11 @@ class SearchBar: UISearchBar {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind() {
+    func bind(_ viewModel: SearchBarViewModel) {
+        self.rx.text
+            .bind(to: viewModel.queryText)
+            .disposed(by: disposeBag)
+        
         // 서치바의 서치버튼이 탭 되었을 경우
         // 커스텀 버튼이 탭 되었을 경우
         Observable<Void>
@@ -35,26 +37,19 @@ class SearchBar: UISearchBar {
                 self.rx.searchButtonClicked.asObservable(),
                 searchButton.rx.tap.asObservable()
             )
-            .bind(to: searchButtonTapped)
+            .bind(to: viewModel.searchButtonTapped)
             .disposed(by: disposeBag)
         
         // 키보드 내림
-        searchButtonTapped
+        viewModel.searchButtonTapped
             .asSignal()
             .emit(to: self.rx.endEditing)
             .disposed(by: disposeBag)
-        
-        self.shouldLoadResult = searchButtonTapped
-            .withLatestFrom(self.rx.text) { $1 ?? "" }
-            .filter{ !$0.isEmpty }
-            .distinctUntilChanged()
-        
     }
     
     func attribute() {
         searchButton.setTitle("검색", for: .normal)
         searchButton.setTitleColor(.systemBlue, for: .normal)
-        
     }
     
     func layout() {

@@ -19,12 +19,9 @@ class ResultList: UITableView {
         )
     )
     
-    // MainViewController -> ResultList 데이터 전달
-    let cellData = PublishSubject<[ResultListCellData]>()
-    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        bind()
+        
         attribute()
     }
     
@@ -32,9 +29,10 @@ class ResultList: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind() {
-        cellData
-            .asDriver(onErrorJustReturn: [])
+    func bind(_ viewModel: ResultListViewModel) {
+        headerView.bind(viewModel.filterViewModel)
+        
+        viewModel.cellData
             .drive(self.rx.items) { tableView, row, data in
                 let index = IndexPath(row: row, section: 0)
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ResultListCell.identifier, for: index) as? ResultListCell else { return UITableViewCell() }
