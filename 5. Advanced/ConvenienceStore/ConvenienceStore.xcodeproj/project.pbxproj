@@ -47,6 +47,9 @@
 		F4AF189D2854D4DD0037C7D2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AF189C2854D4DD0037C7D2 /* libc++.tbd */; };
 		F4AF189F2854D4F10037C7D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AF189E2854D4F10037C7D2 /* libxml2.tbd */; };
 		F4AF18A12854D5040037C7D2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AF18A02854D5040037C7D2 /* libsqlite3.tbd */; };
+		F4AF18A52854D7300037C7D2 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF18A42854D7300037C7D2 /* LocationData.swift */; };
+		F4AF18A72854D7E50037C7D2 /* KLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF18A62854D7E50037C7D2 /* KLDocument.swift */; };
+		F4AF18A92854D9CE0037C7D2 /* DetailListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF18A82854D9CE0037C7D2 /* DetailListCellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +105,9 @@
 		F4AF189C2854D4DD0037C7D2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		F4AF189E2854D4F10037C7D2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		F4AF18A02854D5040037C7D2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F4AF18A42854D7300037C7D2 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		F4AF18A62854D7E50037C7D2 /* KLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KLDocument.swift; sourceTree = "<group>"; };
+		F4AF18A82854D9CE0037C7D2 /* DetailListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCellData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 			children = (
 				F4AF18922854D41E0037C7D2 /* BridgingHeader.h */,
 				F4AF184E2854CB190037C7D2 /* Presentation */,
+				F4AF18A32854D6820037C7D2 /* Entities */,
 				F4AF184D2854CAB10037C7D2 /* Resources */,
 				F4AF18462854CA390037C7D2 /* Info.plist */,
 			);
@@ -245,6 +252,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F4AF18A32854D6820037C7D2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F4AF18A42854D7300037C7D2 /* LocationData.swift */,
+				F4AF18A62854D7E50037C7D2 /* KLDocument.swift */,
+				F4AF18A82854D9CE0037C7D2 /* DetailListCellData.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,8 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4AF18A52854D7300037C7D2 /* LocationData.swift in Sources */,
+				F4AF18A72854D7E50037C7D2 /* KLDocument.swift in Sources */,
 				F4AF183D2854CA360037C7D2 /* MainViewController.swift in Sources */,
 				F4AF18392854CA360037C7D2 /* AppDelegate.swift in Sources */,
+				F4AF18A92854D9CE0037C7D2 /* DetailListCellData.swift in Sources */,
 				F4AF183B2854CA360037C7D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
