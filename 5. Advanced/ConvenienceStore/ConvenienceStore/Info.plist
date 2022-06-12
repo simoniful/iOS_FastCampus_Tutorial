@@ -2,7 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>APP_KEY</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>내 주변의 편의점 정보를 불러오려면 현재 위치에 대한 권한이 필요합니다.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>내 주변의 편의점 정보를 불러오려면 현재 위치에 대한 권한이 필요합니다.</string>
+	<key>KAKAO_APP_KEY</key>
 	<string>$(APP_KEY)</string>
 	<key>API_KEY</key>
 	<string>$(API_KEY)</string>

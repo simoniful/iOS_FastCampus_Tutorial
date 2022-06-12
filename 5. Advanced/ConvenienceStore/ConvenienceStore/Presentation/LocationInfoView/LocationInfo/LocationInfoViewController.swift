@@ -12,8 +12,6 @@ import RxCocoa
 import SnapKit
 
 class LocationInfoViewController: UIViewController {
-//    let API_KEY = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String
-//    let APP_KEY = Bundle.main.object(forInfoDictionaryKey: "APP_KEY") as! String
     let disposeBag = DisposeBag()
     
     let locationManager = CLLocationManager()
@@ -33,7 +31,6 @@ class LocationInfoViewController: UIViewController {
         bind(viewModel)
         attribute()
         layout()
-        
     }
     
     private func bind(_ viewModel: LocationInfoViewModel) {
@@ -44,12 +41,13 @@ class LocationInfoViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.errorMessage
-            .emit(to: self.rx.presentationAlert)
+            .emit(to: self.rx.presentAlert)
             .disposed(by: disposeBag)
         
         viewModel.detailListCellData
-            .drive(detailList.rx.items) { tableView, row, data in
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailListCell.identifier, for: IndexPath(row: row, section: 0)) as? DetailListCell else { return UITableViewCell() }
+            .drive(detailList.rx.items) { tv, row, data in
+                let cell = tv.dequeueReusableCell(withIdentifier: "DetailListCell", for: IndexPath(row: row, section: 0)) as! DetailListCell
+                
                 cell.setData(data)
                 
                 return cell
@@ -57,7 +55,7 @@ class LocationInfoViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.detailListCellData
-            .map { $0.compactMap { $0.point } }
+            .map { $0.compactMap { $0.point} }
             .drive(self.rx.addPOIItems)
             .disposed(by: disposeBag)
         
@@ -117,7 +115,9 @@ class LocationInfoViewController: UIViewController {
 extension LocationInfoViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-        case .authorizedAlways, .authorizedWhenInUse, .notDetermined:
+        case .authorizedAlways,
+             .authorizedWhenInUse,
+             .notDetermined:
             return
         default:
             viewModel.mapViewError.accept(MTMapViewError.LocationAuthorizationDenied.errorDescription)
@@ -131,7 +131,7 @@ extension LocationInfoViewController: MTMapViewDelegate {
         #if DEBUG
         viewModel.currentLocation.accept(MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.394225, longitude: 127.110341)))
         #else
-        viewModel.currentLocation.accept(location)
+         viewModel.currentLocation.accept(location)
         #endif
     }
     
@@ -140,7 +140,7 @@ extension LocationInfoViewController: MTMapViewDelegate {
     }
     
     func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
-        viewModel.selectedPOIItem.accept(poiItem)
+        viewModel.selectPOIItem.accept(poiItem)
         return false
     }
     
@@ -158,11 +158,14 @@ extension Reactive where Base: MTMapView {
 }
 
 extension Reactive where Base: LocationInfoViewController {
-    var presentationAlert: Binder<String> {
+    var presentAlert: Binder<String> {
         return Binder(base) { base, message in
-            let alertController =  UIAlertController(title: "문제가 발생했어요", message: message, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "문제가 발생했어요", message: message, preferredStyle: .alert)
+            
             let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
             alertController.addAction(action)
+            
             base.present(alertController, animated: true, completion: nil)
         }
     }
@@ -180,12 +183,15 @@ extension Reactive where Base: LocationInfoViewController {
                 .enumerated()
                 .map { offset, point -> MTMapPOIItem in
                     let mapPOIItem = MTMapPOIItem()
+                    
                     mapPOIItem.mapPoint = point
                     mapPOIItem.markerType = .redPin
                     mapPOIItem.showAnimationType = .springFromGround
                     mapPOIItem.tag = offset
+                    
                     return mapPOIItem
                 }
+            
             base.mapView.removeAllPOIItems()
             base.mapView.addPOIItems(items)
         }
