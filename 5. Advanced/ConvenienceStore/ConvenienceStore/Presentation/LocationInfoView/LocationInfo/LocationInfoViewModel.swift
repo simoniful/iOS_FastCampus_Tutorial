@@ -98,7 +98,7 @@ struct LocationInfoViewModel {
             .bind(to: detailListBackgroundViewModel.shouldHideStatusLabel)
             .disposed(by: disposeBag)
         
-        scrollToSelectedLocation  = selectPOIItem
+        scrollToSelectedLocation = selectPOIItem
             .map { $0.tag }
             .asSignal(onErrorJustReturn: 0)
     }
