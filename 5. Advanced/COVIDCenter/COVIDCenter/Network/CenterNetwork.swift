@@ -23,7 +23,7 @@ class CenterNetwork {
         }
         
         var request = URLRequest(url: url)
-        request.setValue("infuser \(API_KEY)", forHTTPHeaderField: "Authorization")
+        request.setValue("Infuser \(API_KEY)", forHTTPHeaderField: "Authorization")
         
         return session.dataTaskPublisher(for: request)
             .tryMap { data, response in

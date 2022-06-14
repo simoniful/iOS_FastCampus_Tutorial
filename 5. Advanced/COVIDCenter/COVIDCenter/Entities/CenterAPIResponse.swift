@@ -16,20 +16,22 @@ struct CenterAPIResponse: Decodable {
 }
 
 // MARK: - Datum
-struct Center: Decodable, Hashable {
-    let id: Int
-    let centerName, sigungu, facilityName: String
-    let sido: Sido
-    let zipCode, address, lat, lng: String
-    let createdAt, updatedAt, org: String
-    let centerType: CenterType
-    let phoneNumber: String
-    
+struct Center: Decodable {
+    var address, centerName: String
+    var centerType: CenterType
+    var createdAt, facilityName: String
+    var id: Int
+    var lat, lng: String
+    var org: String
+    var phoneNumber, sigungu, updatedAt: String
+    var sido: Sido
+    var zipCode: String
+
     enum CenterType: String, Decodable {
-        case central = "중앙/권역"
-        case local = "지역"
+        case 중앙권역 = "중앙/권역"
+        case 지역 = "지역"
     }
-    
+
     // CaseIterable, Identifiable 정리
     enum Sido: String, Decodable, CaseIterable, Identifiable {
         case 서울특별시
