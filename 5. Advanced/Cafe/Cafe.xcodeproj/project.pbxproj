@@ -24,6 +24,9 @@
 		F46395FB285B133E009EADF3 /* Practice_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46395FA285B133E009EADF3 /* Practice_2.swift */; };
 		F46395FD285B31A9009EADF3 /* SettingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46395FC285B31A9009EADF3 /* SettingMenu.swift */; };
 		F46395FF285B3812009EADF3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46395FE285B3812009EADF3 /* SettingView.swift */; };
+		F4639601285B59D8009EADF3 /* Practice_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4639600285B59D8009EADF3 /* Practice_3.swift */; };
+		F4639603285B5C11009EADF3 /* Practice_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4639602285B5C11009EADF3 /* Practice_4.swift */; };
+		F4639607285B5F38009EADF3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4639606285B5F38009EADF3 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		F46395FA285B133E009EADF3 /* Practice_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_2.swift; sourceTree = "<group>"; };
 		F46395FC285B31A9009EADF3 /* SettingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenu.swift; sourceTree = "<group>"; };
 		F46395FE285B3812009EADF3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F4639600285B59D8009EADF3 /* Practice_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_3.swift; sourceTree = "<group>"; };
+		F4639602285B5C11009EADF3 /* Practice_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_4.swift; sourceTree = "<group>"; };
+		F4639606285B5F38009EADF3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 				F46395D52859E627009EADF3 /* Assets.xcassets */,
 				F46395E3285AD2F3009EADF3 /* Practice_1.swift */,
 				F46395FA285B133E009EADF3 /* Practice_2.swift */,
+				F4639600285B59D8009EADF3 /* Practice_3.swift */,
+				F4639602285B5C11009EADF3 /* Practice_4.swift */,
 				F46395D72859E627009EADF3 /* Preview Content */,
 			);
 			path = Cafe;
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F46395E5285AD43F009EADF3 /* HomeView.swift */,
+				F4639606285B5F38009EADF3 /* HomeViewModel.swift */,
 				F46395F2285AFA4A009EADF3 /* HeaderView.swift */,
 				F46395E9285AD519009EADF3 /* MenuSuggestionSectionView.swift */,
 				F46395EE285ADB85009EADF3 /* EventsSectionView.swift */,
@@ -217,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46395E4285AD2F4009EADF3 /* Practice_1.swift in Sources */,
+				F4639607285B5F38009EADF3 /* HomeViewModel.swift in Sources */,
 				F46395F1285AEB24009EADF3 /* Event.swift in Sources */,
 				F46395EA285AD519009EADF3 /* MenuSuggestionSectionView.swift in Sources */,
 				F46395EC285AD5A0009EADF3 /* CoffeeMenu.swift in Sources */,
@@ -224,6 +234,8 @@
 				F46395E2285A1B81009EADF3 /* Tab.swift in Sources */,
 				F46395FF285B3812009EADF3 /* SettingView.swift in Sources */,
 				F46395F3285AFA4A009EADF3 /* HeaderView.swift in Sources */,
+				F4639603285B5C11009EADF3 /* Practice_4.swift in Sources */,
+				F4639601285B59D8009EADF3 /* Practice_3.swift in Sources */,
 				F46395FD285B31A9009EADF3 /* SettingMenu.swift in Sources */,
 				F46395D22859E622009EADF3 /* CafeApp.swift in Sources */,
 				F46395E6285AD43F009EADF3 /* HomeView.swift in Sources */,

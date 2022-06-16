@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var viewModel = HomeViewModel()
+    
     var body: some View {
         ScrollView(.vertical) {
-            HeaderView()
-            MenuSuggestionSectionView()
+            HeaderView(isNeedToReload: $viewModel.isNeedToReload)
+            MenuSuggestionSectionView(coffeeMenus: $viewModel.coffeeMenus)
             Spacer(minLength: 32.0)
-            EventsSectionView()
+            EventsSectionView(events: $viewModel.events)
         }
     }
 }

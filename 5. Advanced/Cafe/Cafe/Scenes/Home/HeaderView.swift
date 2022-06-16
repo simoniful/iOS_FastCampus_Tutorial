@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Binding var isNeedToReload: Bool
     
     var body: some View {
         VStack(spacing: 16.0) {
@@ -21,7 +22,7 @@ struct HeaderView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 
                 Button(action: {
-                    // isNeedToReload = true
+                    isNeedToReload = true
                 }, label: {
                     Image(systemName: "arrow.2.circlepath")
                 })
@@ -51,11 +52,5 @@ struct HeaderView: View {
             }
         }
         .padding(16.0)
-    }
-}
-
-struct HeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeaderView()
     }
 }
