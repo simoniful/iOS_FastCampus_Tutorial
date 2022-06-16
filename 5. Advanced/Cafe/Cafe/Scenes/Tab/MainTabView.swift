@@ -9,12 +9,12 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            Text("Home")
+            HomeView()
                 .tabItem {
                     Tab.home.imageItem
                     Tab.home.textItem
                 }
-            Text("Other")
+            OtherView()
                 .tabItem {
                     Tab.other.imageItem
                     Tab.other.textItem

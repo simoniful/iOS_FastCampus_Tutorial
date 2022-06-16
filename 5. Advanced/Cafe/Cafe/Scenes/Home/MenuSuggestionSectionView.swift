@@ -5,15 +5,24 @@
 //  Created by Sang hun Lee on 2022/06/16.
 //
 
+import Foundation
 import SwiftUI
 
 struct MenuSuggestionSectionView: View {
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack {
-                ForEach(CoffeeMenu.sample) { menu in
-                    MenuSuggestionItemView(coffeeMenu: menu)
+        VStack {
+            Text(User.shared.username + "님을 위한 추천메뉴")
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 16.0)
+                
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack {
+                    ForEach(CoffeeMenu.sample) { menu in
+                        MenuSuggestionItemView(coffeeMenu: menu)
+                    }
                 }
+                .padding(.horizontal, 16.0)
             }
         }
     }
