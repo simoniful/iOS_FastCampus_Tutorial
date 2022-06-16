@@ -11,6 +11,8 @@
 		F46395D62859E627009EADF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46395D52859E627009EADF3 /* Assets.xcassets */; };
 		F46395D92859E627009EADF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46395D82859E627009EADF3 /* Preview Assets.xcassets */; };
 		F46395E0285A0251009EADF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46395DF285A0251009EADF3 /* MainTabView.swift */; };
+		F46395E2285A1B81009EADF3 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46395E1285A1B81009EADF3 /* Tab.swift */; };
+		F46395E4285AD2F4009EADF3 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46395E3285AD2F3009EADF3 /* Practice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		F46395D52859E627009EADF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F46395D82859E627009EADF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F46395DF285A0251009EADF3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F46395E1285A1B81009EADF3 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		F46395E3285AD2F3009EADF3 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,10 @@
 		F46395D02859E622009EADF3 /* Cafe */ = {
 			isa = PBXGroup;
 			children = (
+				F46395E3285AD2F3009EADF3 /* Practice.swift */,
 				F46395D12859E622009EADF3 /* CafeApp.swift */,
 				F46395DF285A0251009EADF3 /* MainTabView.swift */,
+				F46395E1285A1B81009EADF3 /* Tab.swift */,
 				F46395D52859E627009EADF3 /* Assets.xcassets */,
 				F46395D72859E627009EADF3 /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46395E4285AD2F4009EADF3 /* Practice.swift in Sources */,
+				F46395E2285A1B81009EADF3 /* Tab.swift in Sources */,
 				F46395D22859E622009EADF3 /* CafeApp.swift in Sources */,
 				F46395E0285A0251009EADF3 /* MainTabView.swift in Sources */,
 			);
