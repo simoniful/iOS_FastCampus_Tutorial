@@ -8,24 +8,34 @@
 import SnapKit
 import UIKit
 
+enum LanguageButtonType {
+    case source
+    case target
+}
+
 final class TranslateViewController: UIViewController {
+    private var sourceLanguage: Language = .korean
+    private var targetLanguage: Language = .english
+    
     private lazy var sourceLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("한국어", for: .normal)
+        button.setTitle(sourceLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(UIColor.label, for: .normal)
         button.backgroundColor = .systemBackground
         button.layer.cornerRadius = 9.0
+        button.addTarget(self, action: #selector(didTapSourceLanguageButton), for: .touchUpInside)
         return button
     }()
     
     private lazy var targetLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("영어", for: .normal)
+        button.setTitle(targetLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(UIColor.label, for: .normal)
         button.backgroundColor = .systemBackground
         button.layer.cornerRadius = 9.0
+        button.addTarget(self, action: #selector(didTapTargetLanguageButton), for: .touchUpInside)
         return button
     }()
     
@@ -70,6 +80,9 @@ final class TranslateViewController: UIViewController {
     private lazy var sourceLabelBaseButton: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBackground
+        // 제스쳐 설정 - 다양한 인터렉션 동작에 대한 지원
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapSourceLabelBaseButton))
+        view.addGestureRecognizer(tapGesture)
         
         return view
     }()
@@ -89,6 +102,15 @@ final class TranslateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         setupView()
+    }
+}
+
+extension TranslateViewController: SourceTextViewControllerDelegate {
+    func didEnterText(_ sourceText: String) {
+        if sourceText.isEmpty { return }
+        
+        sourceLabel.text = sourceText
+        sourceLabel.textColor = .label
     }
 }
 
@@ -149,5 +171,39 @@ private extension TranslateViewController {
             $0.leading.equalTo(sourceLabelBaseButton).inset(24.0)
             $0.trailing.equalTo(sourceLabelBaseButton).inset(24.0)
         }
+    }
+    
+    @objc func didTapSourceLabelBaseButton() {
+        let viewController = SourceTextViewController(delegate: self)
+        present(viewController, animated: true)
+    }
+    
+    @objc func didTapSourceLanguageButton() {
+        didTapLanguageButton(.source)
+    }
+    
+    @objc func didTapTargetLanguageButton() {
+        didTapLanguageButton(.target)
+    }
+    
+    func didTapLanguageButton(_ type: LanguageButtonType) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        Language.allCases.forEach { language in
+            let action = UIAlertAction(title: language.title, style: .default) { [weak self] _ in
+                switch type {
+                case .source:
+                    self?.sourceLanguage = language
+                    self?.sourceLanguageButton.setTitle(language.title, for: .normal)
+                case .target:
+                    self?.targetLanguage = language
+                    self?.targetLanguageButton.setTitle(language.title, for: .normal)
+                }
+            }
+            alertController.addAction(action)
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

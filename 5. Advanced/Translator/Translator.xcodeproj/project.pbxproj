@@ -20,6 +20,8 @@
 		F4E8700B285C71850047D3F9 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8700A285C71850047D3F9 /* BookmarkViewController.swift */; };
 		F4E8700D285C71920047D3F9 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8700C285C71920047D3F9 /* TranslateViewController.swift */; };
 		F4E87010285C75490047D3F9 /* UIColor +.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8700F285C75490047D3F9 /* UIColor +.swift */; };
+		F4E87014285C84120047D3F9 /* SourceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E87013285C84120047D3F9 /* SourceTextViewController.swift */; };
+		F4E87017285D97480047D3F9 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E87016285D97480047D3F9 /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		F4E8700A285C71850047D3F9 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		F4E8700C285C71920047D3F9 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		F4E8700F285C75490047D3F9 /* UIColor +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor +.swift"; sourceTree = "<group>"; };
+		F4E87013285C84120047D3F9 /* SourceTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextViewController.swift; sourceTree = "<group>"; };
+		F4E87016285D97480047D3F9 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			children = (
 				F4E87008285C706F0047D3F9 /* Resources */,
 				F4E87009285C707E0047D3F9 /* Presentations */,
+				F4E87015285D97340047D3F9 /* Model */,
 				F4E8700E285C75350047D3F9 /* Extension */,
 				F4639622285C5EC0009EADF3 /* Info.plist */,
 			);
@@ -147,8 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				F4639618285C5EB8009EADF3 /* TabBarController.swift */,
-				F4E8700C285C71920047D3F9 /* TranslateViewController.swift */,
-				F4E8700A285C71850047D3F9 /* BookmarkViewController.swift */,
+				F4E87011285C83D40047D3F9 /* Translate */,
+				F4E87012285C83EB0047D3F9 /* Bookmark */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -159,6 +164,31 @@
 				F4E8700F285C75490047D3F9 /* UIColor +.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F4E87011285C83D40047D3F9 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8700C285C71920047D3F9 /* TranslateViewController.swift */,
+				F4E87013285C84120047D3F9 /* SourceTextViewController.swift */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		F4E87012285C83EB0047D3F9 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8700A285C71850047D3F9 /* BookmarkViewController.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		F4E87015285D97340047D3F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4E87016285D97480047D3F9 /* Language.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +334,8 @@
 				F4E8700D285C71920047D3F9 /* TranslateViewController.swift in Sources */,
 				F4639619285C5EB8009EADF3 /* TabBarController.swift in Sources */,
 				F4639615285C5EB8009EADF3 /* AppDelegate.swift in Sources */,
+				F4E87017285D97480047D3F9 /* Language.swift in Sources */,
+				F4E87014285C84120047D3F9 /* SourceTextViewController.swift in Sources */,
 				F4639617285C5EB8009EADF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
