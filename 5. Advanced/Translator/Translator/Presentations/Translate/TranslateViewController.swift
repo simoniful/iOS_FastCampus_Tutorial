@@ -101,6 +101,9 @@ final class TranslateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         setupView()
+        TranslatorManager().translate(from: "안녕하세요") {
+            print("🔥\($0)")
+        }
     }
 }
 

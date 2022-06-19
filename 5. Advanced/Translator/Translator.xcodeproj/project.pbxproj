@@ -28,6 +28,9 @@
 		F4E87020285ED48C0047D3F9 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8701F285ED48B0047D3F9 /* BookmarkCell.swift */; };
 		F4F4DEBE285EE18600D7521F /* BookmarkCellTextStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEBD285EE18600D7521F /* BookmarkCellTextStack.swift */; };
 		F4F4DEC0285EE41C00D7521F /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEBF285EE41C00D7521F /* Type.swift */; };
+		F4F4DEC8285F78CD00D7521F /* TranslateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEC7285F78CD00D7521F /* TranslateRequestModel.swift */; };
+		F4F4DECA285F791B00D7521F /* TranslateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEC9285F791B00D7521F /* TranslateResponseModel.swift */; };
+		F4F4DECC285F7A3200D7521F /* TranslatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DECB285F7A3200D7521F /* TranslatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		F4F4DEBD285EE18600D7521F /* BookmarkCellTextStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellTextStack.swift; sourceTree = "<group>"; };
 		F4F4DEBF285EE41C00D7521F /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		F4F4DEC1285F228600D7521F /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		F4F4DEC7285F78CD00D7521F /* TranslateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequestModel.swift; sourceTree = "<group>"; };
+		F4F4DEC9285F791B00D7521F /* TranslateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponseModel.swift; sourceTree = "<group>"; };
+		F4F4DECB285F7A3200D7521F /* TranslatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +131,11 @@
 		F4639613285C5EB8009EADF3 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
-				F4E87008285C706F0047D3F9 /* Resources */,
+				F4F4DEC2285F709900D7521F /* Networks */,
 				F4E87009285C707E0047D3F9 /* Presentations */,
 				F4E87015285D97340047D3F9 /* Models */,
 				F4E8700E285C75350047D3F9 /* Extensions */,
+				F4E87008285C706F0047D3F9 /* Resources */,
 				F4639622285C5EC0009EADF3 /* Info.plist */,
 			);
 			path = Translator;
@@ -206,8 +213,18 @@
 				F4E87016285D97480047D3F9 /* Language.swift */,
 				F4E87018285DCE790047D3F9 /* Bookmark.swift */,
 				F4F4DEBF285EE41C00D7521F /* Type.swift */,
+				F4F4DEC7285F78CD00D7521F /* TranslateRequestModel.swift */,
+				F4F4DEC9285F791B00D7521F /* TranslateResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F4F4DEC2285F709900D7521F /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				F4F4DECB285F7A3200D7521F /* TranslatorManager.swift */,
+			);
+			path = Networks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,9 +376,12 @@
 				F4E8701B285DCECD0047D3F9 /* UserDefaults +.swift in Sources */,
 				F4F4DEC0285EE41C00D7521F /* Type.swift in Sources */,
 				F4E87017285D97480047D3F9 /* Language.swift in Sources */,
+				F4F4DECC285F7A3200D7521F /* TranslatorManager.swift in Sources */,
+				F4F4DECA285F791B00D7521F /* TranslateResponseModel.swift in Sources */,
 				F4E87014285C84120047D3F9 /* SourceTextViewController.swift in Sources */,
 				F4E87020285ED48C0047D3F9 /* BookmarkCell.swift in Sources */,
 				F4639617285C5EB8009EADF3 /* SceneDelegate.swift in Sources */,
+				F4F4DEC8285F78CD00D7521F /* TranslateRequestModel.swift in Sources */,
 				F4E87019285DCE790047D3F9 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
