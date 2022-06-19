@@ -22,6 +22,12 @@
 		F4E87010285C75490047D3F9 /* UIColor +.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8700F285C75490047D3F9 /* UIColor +.swift */; };
 		F4E87014285C84120047D3F9 /* SourceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E87013285C84120047D3F9 /* SourceTextViewController.swift */; };
 		F4E87017285D97480047D3F9 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E87016285D97480047D3F9 /* Language.swift */; };
+		F4E87019285DCE790047D3F9 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E87018285DCE790047D3F9 /* Bookmark.swift */; };
+		F4E8701B285DCECD0047D3F9 /* UserDefaults +.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8701A285DCECD0047D3F9 /* UserDefaults +.swift */; };
+		F4E8701E285ED0710047D3F9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F4E8701D285ED0710047D3F9 /* Toast */; };
+		F4E87020285ED48C0047D3F9 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8701F285ED48B0047D3F9 /* BookmarkCell.swift */; };
+		F4F4DEBE285EE18600D7521F /* BookmarkCellTextStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEBD285EE18600D7521F /* BookmarkCellTextStack.swift */; };
+		F4F4DEC0285EE41C00D7521F /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEBF285EE41C00D7521F /* Type.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		F4E8700F285C75490047D3F9 /* UIColor +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor +.swift"; sourceTree = "<group>"; };
 		F4E87013285C84120047D3F9 /* SourceTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextViewController.swift; sourceTree = "<group>"; };
 		F4E87016285D97480047D3F9 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		F4E87018285DCE790047D3F9 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		F4E8701A285DCECD0047D3F9 /* UserDefaults +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults +.swift"; sourceTree = "<group>"; };
+		F4E8701F285ED48B0047D3F9 /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
+		F4F4DEBD285EE18600D7521F /* BookmarkCellTextStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellTextStack.swift; sourceTree = "<group>"; };
+		F4F4DEBF285EE41C00D7521F /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		F4F4DEC1285F228600D7521F /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E8701E285ED0710047D3F9 /* Toast in Frameworks */,
 				F4E87004285C6DBC0047D3F9 /* SnapKit in Frameworks */,
 				F4E87007285C6DCA0047D3F9 /* Alamofire in Frameworks */,
 			);
@@ -91,6 +104,7 @@
 		F4639608285C5EB8009EADF3 = {
 			isa = PBXGroup;
 			children = (
+				F4F4DEC1285F228600D7521F /* Secrets.xcconfig */,
 				F4639613285C5EB8009EADF3 /* Translator */,
 				F463962A285C5EC1009EADF3 /* TranslatorTests */,
 				F4639634285C5EC2009EADF3 /* TranslatorUITests */,
@@ -113,8 +127,8 @@
 			children = (
 				F4E87008285C706F0047D3F9 /* Resources */,
 				F4E87009285C707E0047D3F9 /* Presentations */,
-				F4E87015285D97340047D3F9 /* Model */,
-				F4E8700E285C75350047D3F9 /* Extension */,
+				F4E87015285D97340047D3F9 /* Models */,
+				F4E8700E285C75350047D3F9 /* Extensions */,
 				F4639622285C5EC0009EADF3 /* Info.plist */,
 			);
 			path = Translator;
@@ -158,12 +172,13 @@
 			path = Presentations;
 			sourceTree = "<group>";
 		};
-		F4E8700E285C75350047D3F9 /* Extension */ = {
+		F4E8700E285C75350047D3F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				F4E8700F285C75490047D3F9 /* UIColor +.swift */,
+				F4E8701A285DCECD0047D3F9 /* UserDefaults +.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F4E87011285C83D40047D3F9 /* Translate */ = {
@@ -179,16 +194,20 @@
 			isa = PBXGroup;
 			children = (
 				F4E8700A285C71850047D3F9 /* BookmarkViewController.swift */,
+				F4E8701F285ED48B0047D3F9 /* BookmarkCell.swift */,
+				F4F4DEBD285EE18600D7521F /* BookmarkCellTextStack.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
-		F4E87015285D97340047D3F9 /* Model */ = {
+		F4E87015285D97340047D3F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F4E87016285D97480047D3F9 /* Language.swift */,
+				F4E87018285DCE790047D3F9 /* Bookmark.swift */,
+				F4F4DEBF285EE41C00D7521F /* Type.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +229,7 @@
 			packageProductDependencies = (
 				F4E87003285C6DBC0047D3F9 /* SnapKit */,
 				F4E87006285C6DCA0047D3F9 /* Alamofire */,
+				F4E8701D285ED0710047D3F9 /* Toast */,
 			);
 			productName = Translator;
 			productReference = F4639611285C5EB8009EADF3 /* Translator.app */;
@@ -286,6 +306,7 @@
 			packageReferences = (
 				F4E87002285C6DBC0047D3F9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F4E87005285C6DCA0047D3F9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F4E8701C285ED0700047D3F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = F4639612285C5EB8009EADF3 /* Products */;
 			projectDirPath = "";
@@ -332,11 +353,16 @@
 				F4E87010285C75490047D3F9 /* UIColor +.swift in Sources */,
 				F4E8700B285C71850047D3F9 /* BookmarkViewController.swift in Sources */,
 				F4E8700D285C71920047D3F9 /* TranslateViewController.swift in Sources */,
+				F4F4DEBE285EE18600D7521F /* BookmarkCellTextStack.swift in Sources */,
 				F4639619285C5EB8009EADF3 /* TabBarController.swift in Sources */,
 				F4639615285C5EB8009EADF3 /* AppDelegate.swift in Sources */,
+				F4E8701B285DCECD0047D3F9 /* UserDefaults +.swift in Sources */,
+				F4F4DEC0285EE41C00D7521F /* Type.swift in Sources */,
 				F4E87017285D97480047D3F9 /* Language.swift in Sources */,
 				F4E87014285C84120047D3F9 /* SourceTextViewController.swift in Sources */,
+				F4E87020285ED48C0047D3F9 /* BookmarkCell.swift in Sources */,
 				F4639617285C5EB8009EADF3 /* SceneDelegate.swift in Sources */,
+				F4E87019285DCE790047D3F9 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +412,7 @@
 /* Begin XCBuildConfiguration section */
 		F4639639285C5EC2009EADF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F4DEC1285F228600D7521F /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -446,6 +473,7 @@
 		};
 		F463963A285C5EC2009EADF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F4DEC1285F228600D7521F /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -688,6 +716,14 @@
 				kind = branch;
 			};
 		};
+		F4E8701C285ED0700047D3F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -700,6 +736,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4E87005285C6DCA0047D3F9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F4E8701D285ED0710047D3F9 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E8701C285ED0700047D3F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,11 +7,9 @@
 
 import SnapKit
 import UIKit
+import Toast
 
-enum LanguageButtonType {
-    case source
-    case target
-}
+
 
 final class TranslateViewController: UIViewController {
     private var sourceLanguage: Language = .korean
@@ -68,12 +66,14 @@ final class TranslateViewController: UIViewController {
     private lazy var resultBookmarkButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.addTarget(self, action: #selector(didTapBookmarkButton), for: .touchUpInside)
         return button
     }()
     
     private lazy var resultCopyButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        button.addTarget(self, action: #selector(didTapCopyButton), for: .touchUpInside)
         return button
     }()
     
@@ -89,7 +89,6 @@ final class TranslateViewController: UIViewController {
     
     private lazy var sourceLabel: UILabel = {
         let label = UILabel()
-        // TODO: sourceLabel에 입력 값이 추가되면, placeHolder 스타일 해제
         label.textColor = .tertiaryLabel
         label.text = "텍스트 입력"
         
@@ -111,6 +110,8 @@ extension TranslateViewController: SourceTextViewControllerDelegate {
         
         sourceLabel.text = sourceText
         sourceLabel.textColor = .label
+        
+        resultBookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
 }
 
@@ -129,7 +130,7 @@ private extension TranslateViewController {
         let defaultSpacing: CGFloat = 16.0
         
         buttonStackView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(16)
             $0.leading.equalToSuperview().inset(defaultSpacing)
             $0.trailing.equalToSuperview().inset(defaultSpacing)
             $0.height.equalTo(50.0)
@@ -162,8 +163,8 @@ private extension TranslateViewController {
         sourceLabelBaseButton.snp.makeConstraints {
             $0.top.equalTo(resultBaseView.snp.bottom).offset(defaultSpacing)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(8.0)
-            // $0.bottom.equalToSuperview().inset(tabBarController?.tabBar.frame.height ?? 0)
+            //$0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview().inset(tabBarController?.tabBar.frame.height ?? 0)
         }
         
         sourceLabel.snp.makeConstraints {
@@ -186,7 +187,7 @@ private extension TranslateViewController {
         didTapLanguageButton(.target)
     }
     
-    func didTapLanguageButton(_ type: LanguageButtonType) {
+    func didTapLanguageButton(_ type: Type) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         Language.allCases.forEach { language in
             let action = UIAlertAction(title: language.title, style: .default) { [weak self] _ in
@@ -205,5 +206,34 @@ private extension TranslateViewController {
         let cancelAction = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func didTapBookmarkButton() {
+        // UserDefault에 저장하는 타이밍
+        guard let sourceText = sourceLabel.text,
+              let translatedText = resultLabel.text,
+              // bookmark.fill == 북마크가 된 상태
+              resultBookmarkButton.imageView?.image == UIImage(systemName: "bookmark")
+        else { return }
+        
+        resultBookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        
+        let currentBookmarks: [Bookmark] = UserDefaults.standard.bookmarks
+        
+        let newBookmark = Bookmark(
+            sourceLanguage: sourceLanguage,
+            translatedLanguage: targetLanguage,
+            sourceText: sourceText,
+            translatedText: translatedText
+        )
+        
+        UserDefaults.standard.bookmarks = [newBookmark] + currentBookmarks
+        
+        print(UserDefaults.standard.bookmarks)
+    }
+    
+    @objc func didTapCopyButton() {
+        UIPasteboard.general.string = resultLabel.text
+        view.makeToast("클립보드로 복사되었어요")
     }
 }
