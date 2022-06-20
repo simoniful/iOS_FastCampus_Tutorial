@@ -12,12 +12,11 @@ import Toast
 
 
 final class TranslateViewController: UIViewController {
-    private var sourceLanguage: Language = .korean
-    private var targetLanguage: Language = .english
+    private var translatorManager = TranslatorManager()
     
     private lazy var sourceLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle(sourceLanguage.title, for: .normal)
+        button.setTitle(translatorManager.sourceLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(UIColor.label, for: .normal)
         button.backgroundColor = .systemBackground
@@ -28,7 +27,7 @@ final class TranslateViewController: UIViewController {
     
     private lazy var targetLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle(targetLanguage.title, for: .normal)
+        button.setTitle(translatorManager.targetLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(UIColor.label, for: .normal)
         button.backgroundColor = .systemBackground
@@ -58,7 +57,6 @@ final class TranslateViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24.0, weight: .bold)
         label.textColor = .mainTintColor
-        label.text = "Hello"
         label.numberOfLines = 0
         return label
     }()
@@ -101,9 +99,6 @@ final class TranslateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         setupView()
-        TranslatorManager().translate(from: "안녕하세요") {
-            print("🔥\($0)")
-        }
     }
 }
 
@@ -113,6 +108,10 @@ extension TranslateViewController: SourceTextViewControllerDelegate {
         
         sourceLabel.text = sourceText
         sourceLabel.textColor = .label
+        
+        translatorManager.translate(from: sourceText) { [weak self] translatedText in
+            self?.resultLabel.text = translatedText
+        }
         
         resultBookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
@@ -196,10 +195,10 @@ private extension TranslateViewController {
             let action = UIAlertAction(title: language.title, style: .default) { [weak self] _ in
                 switch type {
                 case .source:
-                    self?.sourceLanguage = language
+                    self?.translatorManager.sourceLanguage = language
                     self?.sourceLanguageButton.setTitle(language.title, for: .normal)
                 case .target:
-                    self?.targetLanguage = language
+                    self?.translatorManager.targetLanguage = language
                     self?.targetLanguageButton.setTitle(language.title, for: .normal)
                 }
             }
@@ -224,8 +223,8 @@ private extension TranslateViewController {
         let currentBookmarks: [Bookmark] = UserDefaults.standard.bookmarks
         
         let newBookmark = Bookmark(
-            sourceLanguage: sourceLanguage,
-            translatedLanguage: targetLanguage,
+            sourceLanguage: translatorManager.sourceLanguage,
+            translatedLanguage: translatorManager.targetLanguage,
             sourceText: sourceText,
             translatedText: translatedText
         )
