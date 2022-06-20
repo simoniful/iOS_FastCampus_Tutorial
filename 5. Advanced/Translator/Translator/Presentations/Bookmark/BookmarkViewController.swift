@@ -40,7 +40,7 @@ final class BookmarkViewController: UIViewController {
 
 private extension BookmarkViewController {
     func setupNavigation() {
-        navigationItem.title = "즐겨찾기"
+        navigationItem.title = NSLocalizedString("Bookmark", comment: "즐겨찾기")
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
