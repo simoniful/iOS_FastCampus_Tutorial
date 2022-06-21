@@ -17,4 +17,12 @@ struct Book: Decodable {
     var imageURL: URL? {
         URL(string: image ?? "")
     }
+    
+    init(title: String, image: String?, author: String, description: String, publisher: String) {
+        self.title = title
+        self.image = image
+        self.author = author
+        self.description = description
+        self.publisher = publisher
+    }
 }

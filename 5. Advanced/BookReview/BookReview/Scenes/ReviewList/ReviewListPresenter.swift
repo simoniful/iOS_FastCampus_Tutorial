@@ -10,24 +10,25 @@ import Kingfisher
 
 protocol ReviewListProtocol {
     func setupNavigationBar()
-    func setupViews()
+    func setupView()
     func presentToReviewWriteViewController()
     func reloadTableView()
 }
 
 final class ReviewListPresenter: NSObject {
     private let viewController: ReviewListProtocol
-    private let userDefaultManager = UserDefaultsManager()
+    private let userDefaultManager: UserDefaultsManagerProtocol
     
     private var bookReviews: [BookReview] = []
     
-    init(viewController: ReviewListProtocol) {
+    init(viewController: ReviewListProtocol, userDefaultManager: UserDefaultsManagerProtocol = UserDefaultsManager()) {
         self.viewController = viewController
+        self.userDefaultManager = userDefaultManager
     }
     
     func viewDidLoad() {
         viewController.setupNavigationBar()
-        viewController.setupViews()
+        viewController.setupView()
     }
     
     func viewWillAppear() {

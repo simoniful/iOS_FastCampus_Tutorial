@@ -114,8 +114,6 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         bookTitleButton.setTitleColor(.label, for: .normal)
         imageView.kf.setImage(with: book.imageURL)
     }
-    
-   
 }
 
 extension ReviewWriteViewController: UITextViewDelegate {

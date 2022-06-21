@@ -42,7 +42,7 @@ extension ReviewListViewController: ReviewListProtocol {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
-    func setupViews() {
+    func setupView() {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
