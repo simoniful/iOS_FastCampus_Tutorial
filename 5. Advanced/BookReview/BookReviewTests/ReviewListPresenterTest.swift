@@ -1,14 +1,14 @@
 //
-//  BookReviewTests.swift
+//  ReviewListPresenterTest.swift
 //  BookReviewTests
 //
-//  Created by Sang hun Lee on 2022/06/20.
+//  Created by Sang hun Lee on 2022/06/21.
 //
 
 import XCTest
 @testable import BookReview
 
-class BookReviewTests: XCTestCase {
+class ReviewListPresenterTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

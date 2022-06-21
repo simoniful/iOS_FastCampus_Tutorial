@@ -20,7 +20,6 @@ final class ReviewListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter.viewDidLoad()
     }
     
@@ -29,11 +28,6 @@ final class ReviewListViewController: UIViewController {
         presenter.viewWillAppear()
     }
 }
-
-// UI 인터렉션에 의해 특정한 기능을 수행하도록 하는 프로토콜 - 어디에 둘지 고민 필요
-// extension ReviewListViewController: UITextViewDelegate {
-//
-// }
 
 extension ReviewListViewController: ReviewListProtocol {
     func setupNavigationBar() {
@@ -64,7 +58,6 @@ extension ReviewListViewController: ReviewListProtocol {
     
     func reloadTableView() {
         tableView.reloadData()
-        print("최신 도서리뷰 목록 보여주기")
     }
 }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class ReviewWriteViewController: UIViewController {
     private lazy var presenter = ReviewWritePresenter(viewController: self)
@@ -17,13 +18,14 @@ final class ReviewWriteViewController: UIViewController {
         button.setTitleColor(.tertiaryLabel, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 23.0, weight: .bold)
         button.contentHorizontalAlignment = .left
+        button.addTarget(self, action: #selector(didTapBookTitleButton), for: .touchUpInside)
         return button
     }()
     
     private lazy var contentTextView: UITextView = {
         let textView = UITextView()
         textView.textColor = .tertiaryLabel
-        textView.text = "내용을 입력해주세요"
+        textView.text = presenter.contentTextViewPlaceHolderText
         textView.font = .systemFont(ofSize: 16.0, weight: .medium)
         textView.delegate = self
         return textView
@@ -77,6 +79,11 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         self.dismiss(animated: true)
     }
     
+    func presentToSearchBookViewController() {
+        let searchBookViewController = UINavigationController(rootViewController: SearchBookViewController(searchBookDelegate: presenter))
+        present(searchBookViewController, animated: true)
+    }
+    
     func setupView() {
         view.backgroundColor = .systemBackground
         
@@ -101,6 +108,14 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    
+    func updateView(_ book: Book) {
+        bookTitleButton.setTitle(book.title.htmlEscaped, for: .normal)
+        bookTitleButton.setTitleColor(.label, for: .normal)
+        imageView.kf.setImage(with: book.imageURL)
+    }
+    
+   
 }
 
 extension ReviewWriteViewController: UITextViewDelegate {
@@ -118,6 +133,10 @@ private extension ReviewWriteViewController {
     }
     
     @objc func didTapRightBarButton() {
-        presenter.didTapRightBarButton()
+        presenter.didTapRightBarButton(contentsText: contentTextView.text)
+    }
+    
+    @objc func didTapBookTitleButton() {
+        presenter.didTapBookTitleButton()
     }
 }

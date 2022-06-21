@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F48A38AE2861A918002E0F94 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38AD2861A918002E0F94 /* Book.swift */; };
+		F48A38B02861B664002E0F94 /* SearchBookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38AF2861B664002E0F94 /* SearchBookViewCell.swift */; };
+		F48A38B42861E8EC002E0F94 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38B32861E8EC002E0F94 /* UserDefaultsManager.swift */; };
+		F48A38B62861E906002E0F94 /* BookReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38B52861E906002E0F94 /* BookReview.swift */; };
+		F48A38B92861F0F1002E0F94 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38B82861F0F1002E0F94 /* String +.swift */; };
+		F48A38BB28620F65002E0F94 /* ReviewListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38BA28620F65002E0F94 /* ReviewListPresenterTest.swift */; };
+		F48A38BD28620F7D002E0F94 /* ReviewWritePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A38BC28620F7D002E0F94 /* ReviewWritePresenterTest.swift */; };
 		F4F4DEE128604B7500D7521F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEE028604B7500D7521F /* AppDelegate.swift */; };
 		F4F4DEE328604B7500D7521F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEE228604B7500D7521F /* SceneDelegate.swift */; };
 		F4F4DEE528604B7500D7521F /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEE428604B7500D7521F /* ReviewListViewController.swift */; };
 		F4F4DEEA28604B7A00D7521F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F4DEE928604B7A00D7521F /* Assets.xcassets */; };
 		F4F4DEED28604B7A00D7521F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F4DEEB28604B7A00D7521F /* LaunchScreen.storyboard */; };
-		F4F4DEF828604B7A00D7521F /* BookReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DEF728604B7A00D7521F /* BookReviewTests.swift */; };
 		F4F4DF0228604B7A00D7521F /* BookReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF0128604B7A00D7521F /* BookReviewUITests.swift */; };
 		F4F4DF0428604B7A00D7521F /* BookReviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF0328604B7A00D7521F /* BookReviewUITestsLaunchTests.swift */; };
 		F4F4DF122860535D00D7521F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4F4DF112860535D00D7521F /* SnapKit */; };
@@ -21,6 +27,11 @@
 		F4F4DF1A286055D600D7521F /* ReviewListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF19286055D600D7521F /* ReviewListPresenter.swift */; };
 		F4F4DF20286061D900D7521F /* ReviewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF1F286061D900D7521F /* ReviewWriteViewController.swift */; };
 		F4F4DF22286061E900D7521F /* ReviewWritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF21286061E900D7521F /* ReviewWritePresenter.swift */; };
+		F4F4DF2528618DC000D7521F /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF2428618DC000D7521F /* SearchBookViewController.swift */; };
+		F4F4DF27286197F500D7521F /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF26286197F500D7521F /* SearchBookPresenter.swift */; };
+		F4F4DF2B2861A58F00D7521F /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF2A2861A58F00D7521F /* BookSearchManager.swift */; };
+		F4F4DF2E2861A5C200D7521F /* BookSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF2D2861A5C200D7521F /* BookSearchResponseModel.swift */; };
+		F4F4DF302861A5CC00D7521F /* BookSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4DF2F2861A5CC00D7521F /* BookSearchRequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F48A38AD2861A918002E0F94 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F48A38AF2861B664002E0F94 /* SearchBookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewCell.swift; sourceTree = "<group>"; };
+		F48A38B32861E8EC002E0F94 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		F48A38B52861E906002E0F94 /* BookReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReview.swift; sourceTree = "<group>"; };
+		F48A38B82861F0F1002E0F94 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
+		F48A38BA28620F65002E0F94 /* ReviewListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenterTest.swift; sourceTree = "<group>"; };
+		F48A38BC28620F7D002E0F94 /* ReviewWritePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenterTest.swift; sourceTree = "<group>"; };
 		F4F4DEDD28604B7500D7521F /* BookReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F4DEE028604B7500D7521F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F4DEE228604B7500D7521F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,13 +67,18 @@
 		F4F4DEEC28604B7A00D7521F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4F4DEEE28604B7A00D7521F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4F4DEF328604B7A00D7521F /* BookReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4F4DEF728604B7A00D7521F /* BookReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewTests.swift; sourceTree = "<group>"; };
 		F4F4DEFD28604B7A00D7521F /* BookReviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F4DF0128604B7A00D7521F /* BookReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITests.swift; sourceTree = "<group>"; };
 		F4F4DF0328604B7A00D7521F /* BookReviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F4F4DF19286055D600D7521F /* ReviewListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenter.swift; sourceTree = "<group>"; };
 		F4F4DF1F286061D900D7521F /* ReviewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewController.swift; sourceTree = "<group>"; };
 		F4F4DF21286061E900D7521F /* ReviewWritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenter.swift; sourceTree = "<group>"; };
+		F4F4DF2428618DC000D7521F /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
+		F4F4DF26286197F500D7521F /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
+		F4F4DF282861A0B500D7521F /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		F4F4DF2A2861A58F00D7521F /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
+		F4F4DF2D2861A5C200D7521F /* BookSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResponseModel.swift; sourceTree = "<group>"; };
+		F4F4DF2F2861A5CC00D7521F /* BookSearchRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRequestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +109,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F48A38B12861E8A9002E0F94 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F48A38B22861E8B7002E0F94 /* LocalDatabase */,
+				F4F4DF292861A57400D7521F /* Network */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F48A38B22861E8B7002E0F94 /* LocalDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				F48A38B32861E8EC002E0F94 /* UserDefaultsManager.swift */,
+			);
+			path = LocalDatabase;
+			sourceTree = "<group>";
+		};
+		F48A38B72861F0D4002E0F94 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F48A38B82861F0F1002E0F94 /* String +.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F4F4DED428604B7500D7521F = {
 			isa = PBXGroup;
 			children = (
+				F4F4DF282861A0B500D7521F /* Secrets.xcconfig */,
 				F4F4DEDF28604B7500D7521F /* BookReview */,
 				F4F4DEF628604B7A00D7521F /* BookReviewTests */,
 				F4F4DF0028604B7A00D7521F /* BookReviewUITests */,
@@ -109,7 +158,10 @@
 		F4F4DEDF28604B7500D7521F /* BookReview */ = {
 			isa = PBXGroup;
 			children = (
+				F48A38B12861E8A9002E0F94 /* Managers */,
 				F4F4DF1B2860562D00D7521F /* Scenes */,
+				F4F4DF2C2861A5A600D7521F /* Models */,
+				F48A38B72861F0D4002E0F94 /* Extensions */,
 				F4F4DF1D2860564300D7521F /* Resources */,
 				F4F4DEEE28604B7A00D7521F /* Info.plist */,
 			);
@@ -119,7 +171,8 @@
 		F4F4DEF628604B7A00D7521F /* BookReviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4F4DEF728604B7A00D7521F /* BookReviewTests.swift */,
+				F48A38BA28620F65002E0F94 /* ReviewListPresenterTest.swift */,
+				F48A38BC28620F7D002E0F94 /* ReviewWritePresenterTest.swift */,
 			);
 			path = BookReviewTests;
 			sourceTree = "<group>";
@@ -138,6 +191,7 @@
 			children = (
 				F4F4DF1C2860563800D7521F /* ReviewList */,
 				F4F4DF1E286061B400D7521F /* ReviewWrite */,
+				F4F4DF2328618D9E00D7521F /* SearchBook */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -169,6 +223,35 @@
 				F4F4DF21286061E900D7521F /* ReviewWritePresenter.swift */,
 			);
 			path = ReviewWrite;
+			sourceTree = "<group>";
+		};
+		F4F4DF2328618D9E00D7521F /* SearchBook */ = {
+			isa = PBXGroup;
+			children = (
+				F4F4DF2428618DC000D7521F /* SearchBookViewController.swift */,
+				F4F4DF26286197F500D7521F /* SearchBookPresenter.swift */,
+				F48A38AF2861B664002E0F94 /* SearchBookViewCell.swift */,
+			);
+			path = SearchBook;
+			sourceTree = "<group>";
+		};
+		F4F4DF292861A57400D7521F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4F4DF2A2861A58F00D7521F /* BookSearchManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F4F4DF2C2861A5A600D7521F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4F4DF2F2861A5CC00D7521F /* BookSearchRequestModel.swift */,
+				F4F4DF2D2861A5C200D7521F /* BookSearchResponseModel.swift */,
+				F48A38AD2861A918002E0F94 /* Book.swift */,
+				F48A38B52861E906002E0F94 /* BookReview.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,9 +395,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F4DF22286061E900D7521F /* ReviewWritePresenter.swift in Sources */,
+				F4F4DF302861A5CC00D7521F /* BookSearchRequestModel.swift in Sources */,
 				F4F4DEE528604B7500D7521F /* ReviewListViewController.swift in Sources */,
 				F4F4DF1A286055D600D7521F /* ReviewListPresenter.swift in Sources */,
+				F48A38B02861B664002E0F94 /* SearchBookViewCell.swift in Sources */,
+				F48A38B62861E906002E0F94 /* BookReview.swift in Sources */,
+				F4F4DF2B2861A58F00D7521F /* BookSearchManager.swift in Sources */,
+				F4F4DF2E2861A5C200D7521F /* BookSearchResponseModel.swift in Sources */,
+				F4F4DF2528618DC000D7521F /* SearchBookViewController.swift in Sources */,
 				F4F4DF20286061D900D7521F /* ReviewWriteViewController.swift in Sources */,
+				F48A38AE2861A918002E0F94 /* Book.swift in Sources */,
+				F48A38B92861F0F1002E0F94 /* String +.swift in Sources */,
+				F48A38B42861E8EC002E0F94 /* UserDefaultsManager.swift in Sources */,
+				F4F4DF27286197F500D7521F /* SearchBookPresenter.swift in Sources */,
 				F4F4DEE128604B7500D7521F /* AppDelegate.swift in Sources */,
 				F4F4DEE328604B7500D7521F /* SceneDelegate.swift in Sources */,
 			);
@@ -324,7 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F4DEF828604B7A00D7521F /* BookReviewTests.swift in Sources */,
+				F48A38BD28620F7D002E0F94 /* ReviewWritePresenterTest.swift in Sources */,
+				F48A38BB28620F65002E0F94 /* ReviewListPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +460,7 @@
 /* Begin XCBuildConfiguration section */
 		F4F4DF0528604B7A00D7521F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F4DF282861A0B500D7521F /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -426,6 +521,7 @@
 		};
 		F4F4DF0628604B7A00D7521F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F4DF282861A0B500D7521F /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

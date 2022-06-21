@@ -12,10 +12,16 @@ protocol ReviewWriteProtocol {
     func showCloseAlertController()
     func close()
     func setupView()
+    func presentToSearchBookViewController()
+    func updateView(_ book: Book)
 }
 
 final class ReviewWritePresenter: NSObject {
     private let viewController: ReviewWriteProtocol
+    private let userDefaultManager = UserDefaultsManager()
+    private var book: Book?
+    
+    let contentTextViewPlaceHolderText = "내용을 입력해주세요."
     
     init(viewController: ReviewWriteProtocol) {
         self.viewController = viewController
@@ -30,8 +36,30 @@ final class ReviewWritePresenter: NSObject {
         viewController.showCloseAlertController()
     }
     
-    func didTapRightBarButton() {
-        // TODO: UserDefaults에 유저가 작성한 도시 리뷰를 저장하기
+    func didTapRightBarButton(contentsText: String?) {
+        guard let book = book,
+              let contentsText = contentsText,
+              contentsText != contentTextViewPlaceHolderText
+        else { return }
+        
+        let bookReview = BookReview(
+            title: book.title,
+            contents: contentsText,
+            imageURL: book.imageURL
+        )
+    
+        userDefaultManager.setReview(bookReview)
         viewController.close()
+    }
+    
+    func didTapBookTitleButton() {
+        viewController.presentToSearchBookViewController()
+    }
+}
+
+extension ReviewWritePresenter: SearchBookDelegate {
+    func selectBook(_ book: Book) {
+        self.book = book
+        viewController.updateView(book)
     }
 }
