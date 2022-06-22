@@ -1,0 +1,6 @@
+framework module Pods_CalamityAlarm {
+  umbrella header "Pods-CalamityAlarm-umbrella.h"
+
+  export *
+  module * { export * }
+}
