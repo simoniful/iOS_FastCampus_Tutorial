@@ -20,14 +20,15 @@ protocol SearchBookDelegate {
 
 final class SearchBookPresenter: NSObject {
     private let viewController: SearchBookProtocol
-    private let bookSearchManager = BookSearchManager()
+    private let bookSearchManager: BookSearchManagerProtocol
     private let delegate: SearchBookDelegate
     
-    private var books: [Book] = []
+    var books: [Book] = []
     
-    init(viewController: SearchBookProtocol, delegate: SearchBookDelegate) {
+    init(viewController: SearchBookProtocol, delegate: SearchBookDelegate, bookSearchManager: BookSearchManagerProtocol = BookSearchManager()) {
         self.viewController = viewController
         self.delegate = delegate
+        self.bookSearchManager = bookSearchManager
     }
     
     func viewDidLoad() {
@@ -38,7 +39,8 @@ final class SearchBookPresenter: NSObject {
 extension SearchBookPresenter: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text else { return }
-        
+        if searchText == "" { return }
+
         bookSearchManager.request(from: searchText) { [weak self] newBooks in
             self?.books = newBooks
             self?.viewController.reloadTableView()

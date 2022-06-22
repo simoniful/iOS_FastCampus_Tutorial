@@ -16,6 +16,8 @@ final class MockReviewWriteViewController: ReviewWriteProtocol {
     var isCalledPresentToSearchBookViewController = false
     var isCalledUpdateView = false
     
+    var isCalledSelectBook = false
+    
     func setupNavigationBar() {
         isCalledSetupNavigationBar = true
     }
@@ -39,6 +41,10 @@ final class MockReviewWriteViewController: ReviewWriteProtocol {
     func updateView(_ book: Book) {
         isCalledUpdateView = true
     }
-    
-    
+}
+
+extension MockReviewWriteViewController: SearchBookDelegate {
+    func selectBook(_ book: Book) {
+        isCalledSelectBook = true
+    }
 }

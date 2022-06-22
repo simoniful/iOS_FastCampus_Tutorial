@@ -8,7 +8,11 @@
 import Foundation
 import Alamofire
 
-struct BookSearchManager {
+protocol BookSearchManagerProtocol {
+    func request(from keyword: String, completionHandler: @escaping ([Book]) -> ())
+}
+
+struct BookSearchManager: BookSearchManagerProtocol {
     func request(from keyword: String, completionHandler: @escaping ([Book]) -> ()) {
         guard let url = URL(string: "https://openapi.naver.com/v1/search/book.json") else { return }
         
