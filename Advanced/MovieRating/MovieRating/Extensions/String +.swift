@@ -19,9 +19,11 @@ extension String {
         ]
         
         do {
-            let attributed = try NSAttributedString(data: encodedData,
-                                                    options: options,
-                                                    documentAttributes: nil)
+            let attributed = try NSAttributedString(
+                data: encodedData,
+                options: options,
+                documentAttributes: nil
+            )
             return attributed.string
         } catch {
             return self

@@ -12,51 +12,27 @@ protocol MovieListProtocol: AnyObject {
     func setupSearchBar()
     func setupView()
     func updateSearchTableView(isHidden: Bool)
+    func pushToMovieDetailViewController(with movie: Movie)
+    func updateCollectionView()
 }
 
 final class MovieListPresenter: NSObject {
     // unowned let / weak var
     private weak var viewController: MovieListProtocol?
-    
     private let movieSearchManager: MovieSearchManagerProtocol
+    private let userDefaultsManager : UserDefaultsManagerProtocol
     
-    private var likedMovies: [Movie] = [
-        Movie(
-            title: "스타워즈: 라스트 제다이",
-            link:  "https://movie.naver.com/movie/bi/mi/basic.nhn?code=125488",
-            image:  "https://ssl.pstatic.net/imgmovie/mdi/mit110/1254/125488_P20_135324.jpg",
-            subtitle: "<b>Star</b> <b>Wars</b>: The Last Jedi",
-            pubDate: "2017",
-            director: "라이언 존슨|",
-            actor: "데이지 리들리|마크 해밀|오스카 아이삭|아담 드라이버|캐리 피셔|존 보예가|",
-            userRating: "6.33"
-        ),
-        Movie(
-            title: "스타워즈: 라스트 제다이",
-            link:  "https://movie.naver.com/movie/bi/mi/basic.nhn?code=125488",
-            image:  "https://ssl.pstatic.net/imgmovie/mdi/mit110/1254/125488_P20_135324.jpg",
-            subtitle: "<b>Star</b> <b>Wars</b>: The Last Jedi",
-            pubDate: "2017",
-            director: "라이언 존슨|",
-            actor: "데이지 리들리|마크 해밀|오스카 아이삭|아담 드라이버|캐리 피셔|존 보예가|",
-            userRating: "6.33"
-        ),
-        Movie(
-            title: "스타워즈: 라스트 제다이",
-            link:  "https://movie.naver.com/movie/bi/mi/basic.nhn?code=125488",
-            image:  "https://ssl.pstatic.net/imgmovie/mdi/mit110/1254/125488_P20_135324.jpg",
-            subtitle: "<b>Star</b> <b>Wars</b>: The Last Jedi",
-            pubDate: "2017",
-            director: "라이언 존슨|",
-            actor: "데이지 리들리|마크 해밀|오스카 아이삭|아담 드라이버|캐리 피셔|존 보예가|",
-            userRating: "6.33"
-        )
-    ]
+    private var likedMovies: [Movie] = []
     
     private var currentMovieSearchResult: [Movie] = []
     
-    init(viewController: MovieListProtocol, movieSearchManager: MovieSearchManagerProtocol = MovieSearchManager()) {
+    init(
+        viewController: MovieListProtocol,
+        userDefaultsManager: UserDefaultsManagerProtocol = UserDefaultsManager(),
+        movieSearchManager: MovieSearchManagerProtocol = MovieSearchManager()
+    ) {
         self.viewController = viewController
+        self.userDefaultsManager = userDefaultsManager
         self.movieSearchManager = movieSearchManager
     }
     
@@ -64,6 +40,15 @@ final class MovieListPresenter: NSObject {
         viewController?.setupNavigationBar()
         viewController?.setupSearchBar()
         viewController?.setupView()
+    }
+    
+    func viewWillAppear() {
+        likedMovies = userDefaultsManager.getMovies().map { movie in
+            var movie = movie
+            movie.isLiked = true
+            return movie
+        }
+        viewController?.updateCollectionView()
     }
 }
 
@@ -87,11 +72,17 @@ extension MovieListPresenter: UISearchBarDelegate {
 }
 
 extension MovieListPresenter: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return likedMovies.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MovieListCollectionViewCell.identifier,
             for: indexPath
@@ -128,14 +119,28 @@ extension MovieListPresenter: UICollectionViewDelegateFlowLayout {
             right: inset
         )
     }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let movie = likedMovies[indexPath.item]
+        viewController?.pushToMovieDetailViewController(with: movie)
+    }
 }
 
 extension MovieListPresenter: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return currentMovieSearchResult.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "MovieListSearchResultTableViewCell")
         cell.textLabel?.text = currentMovieSearchResult[indexPath.row].title.htmlEscaped
         cell.detailTextLabel?.text = currentMovieSearchResult[indexPath.row].subtitle.htmlEscaped
@@ -144,5 +149,11 @@ extension MovieListPresenter: UITableViewDataSource {
 }
 
 extension MovieListPresenter: UITableViewDelegate {
-    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let movie = currentMovieSearchResult[indexPath.row]
+        viewController?.pushToMovieDetailViewController(with: movie)
+    }
 }
