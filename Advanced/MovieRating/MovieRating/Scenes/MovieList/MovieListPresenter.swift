@@ -22,9 +22,9 @@ final class MovieListPresenter: NSObject {
     private let movieSearchManager: MovieSearchManagerProtocol
     private let userDefaultsManager : UserDefaultsManagerProtocol
     
-    private var likedMovies: [Movie] = []
+    var likedMovies: [Movie] = []
     
-    private var currentMovieSearchResult: [Movie] = []
+    var currentMovieSearchResult: [Movie] = []
     
     init(
         viewController: MovieListProtocol,

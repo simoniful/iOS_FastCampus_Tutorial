@@ -15,7 +15,7 @@ protocol MovieDetailProtocol: AnyObject {
 final class MovieDetailPresenter: NSObject {
     private weak var viewController: MovieDetailProtocol?
     private let userDefaultsManager: UserDefaultsManagerProtocol
-    private var movie: Movie
+    var movie: Movie
     
     init(
         viewController: MovieDetailProtocol,
