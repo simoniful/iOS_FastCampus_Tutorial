@@ -87,7 +87,7 @@ private extension FeedTableViewCell {
             writerNameLabel,
             writerAccountLabel,
             contentsLabel,
-            buttonStackView,
+            buttonStackView
         ].forEach {
             addSubview($0)
         }

@@ -41,10 +41,16 @@ final class FeedViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
+    }
 }
 
 extension FeedViewController: FeedProtocol {
     func setupView() {
+        view.backgroundColor = .systemBackground
         navigationItem.title = "Feed"
         
         [tableView, writeButton].forEach {
@@ -62,5 +68,10 @@ extension FeedViewController: FeedProtocol {
     
     func reloadTableView() {
         tableView.reloadData()
+    }
+    
+    func pushToTweetViewController(with tweet: Tweet) {
+        let tweetViewController = TweetViewController(tweet: tweet)
+        navigationController?.pushViewController(tweetViewController, animated: true)
     }
 }

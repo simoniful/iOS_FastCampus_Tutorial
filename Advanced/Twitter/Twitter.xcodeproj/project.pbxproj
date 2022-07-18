@@ -27,6 +27,8 @@
 		F4DD9A7428853E3000468E9C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7328853E3000468E9C /* TabBarItem.swift */; };
 		F4DD9A7628853F0E00468E9C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7528853F0D00468E9C /* FeedTableViewCell.swift */; };
 		F4DD9A7A288545E500468E9C /* ButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A79288545E500468E9C /* ButtonIcon.swift */; };
+		F4DD9A7D288551BC00468E9C /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7C288551BC00468E9C /* TweetViewController.swift */; };
+		F4DD9A7F288551C800468E9C /* TweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7E288551C800468E9C /* TweetPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		F4DD9A7328853E3000468E9C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		F4DD9A7528853F0D00468E9C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		F4DD9A79288545E500468E9C /* ButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIcon.swift; sourceTree = "<group>"; };
+		F4DD9A7C288551BC00468E9C /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		F4DD9A7E288551C800468E9C /* TweetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,6 @@
 				44B4289BA54DE82C801EF7B1 /* Pods-TwitterTests.debug.xcconfig */,
 				5186EE1874CD83762BBC4590 /* Pods-TwitterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +211,7 @@
 				F4DD9A7328853E3000468E9C /* TabBarItem.swift */,
 				F4DD9A3428851ACA00468E9C /* TabBarViewController.swift */,
 				F4DD9A72288539D000468E9C /* Feed */,
+				F4DD9A7B2885519500468E9C /* Tweet */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -233,8 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				F4DD9A6E288539C200468E9C /* FeedViewController.swift */,
-				F4DD9A70288539CB00468E9C /* FeedPresenter.swift */,
 				F4DD9A7528853F0D00468E9C /* FeedTableViewCell.swift */,
+				F4DD9A70288539CB00468E9C /* FeedPresenter.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -253,6 +257,15 @@
 				F4DD9A79288545E500468E9C /* ButtonIcon.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		F4DD9A7B2885519500468E9C /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				F4DD9A7C288551BC00468E9C /* TweetViewController.swift */,
+				F4DD9A7E288551C800468E9C /* TweetPresenter.swift */,
+			);
+			path = Tweet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,7 +365,7 @@
 			);
 			mainGroup = F4DD9A2428851AC900468E9C;
 			packageReferences = (
-				F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F4DD9A2E28851ACA00468E9C /* Products */;
 			projectDirPath = "";
@@ -503,10 +516,12 @@
 				F4DD9A3528851ACA00468E9C /* TabBarViewController.swift in Sources */,
 				F4DD9A71288539CB00468E9C /* FeedPresenter.swift in Sources */,
 				F4DD9A7428853E3000468E9C /* TabBarItem.swift in Sources */,
+				F4DD9A7F288551C800468E9C /* TweetPresenter.swift in Sources */,
 				F4DD9A7628853F0E00468E9C /* FeedTableViewCell.swift in Sources */,
 				F4DD9A3128851ACA00468E9C /* AppDelegate.swift in Sources */,
 				F4DD9A3328851ACA00468E9C /* SceneDelegate.swift in Sources */,
 				F4DD9A6A2885204400468E9C /* User.swift in Sources */,
+				F4DD9A7D288551BC00468E9C /* TweetViewController.swift in Sources */,
 				F4DD9A682885203B00468E9C /* Tweet.swift in Sources */,
 				F4DD9A7A288545E500468E9C /* ButtonIcon.swift in Sources */,
 				F4DD9A6F288539C200468E9C /* FeedViewController.swift in Sources */,
@@ -851,7 +866,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+		F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -864,7 +879,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F4DD9A6128851AED00468E9C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			package = F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

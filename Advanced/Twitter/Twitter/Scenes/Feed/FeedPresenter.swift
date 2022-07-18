@@ -11,24 +11,37 @@ protocol FeedProtocol: AnyObject {
     func setupView()
     func setupConstraints()
     func reloadTableView()
+    func pushToTweetViewController(with tweet: Tweet)
 }
 
 final class FeedPresenter: NSObject {
     private weak var viewController: FeedProtocol?
+    private let userDefaultManager: UserDefaultManagerProtocol
     
-    init(viewController: FeedProtocol) {
+    private var tweets: [Tweet] = []
+    
+    init(
+        viewController: FeedProtocol,
+        userDefaultManager: UserDefaultManagerProtocol = UserDefaultManager()
+    ) {
         self.viewController = viewController
+        self.userDefaultManager = userDefaultManager
     }
     
     func viewDidLoad() {
         viewController?.setupView()
         viewController?.setupConstraints()
     }
+    
+    func viewWillAppear() {
+        tweets = userDefaultManager.getTweet()
+        viewController?.reloadTableView()
+    }
 }
 
 extension FeedPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return tweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,7 +49,7 @@ extension FeedPresenter: UITableViewDataSource {
             withIdentifier: FeedTableViewCell.identifier,
             for: indexPath
         ) as? FeedTableViewCell else { return UITableViewCell() }
-        let tweet = Tweet(user: User.shared, contents: "안녕하세요")
+        let tweet = tweets[indexPath.row]
         cell.configureCell(tweet: tweet)
         
         return cell
@@ -44,5 +57,8 @@ extension FeedPresenter: UITableViewDataSource {
 }
 
 extension FeedPresenter: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tweet = tweets[indexPath.row]
+        viewController?.pushToTweetViewController(with: tweet)
+    }
 }
