@@ -311,8 +311,8 @@
 		F4AF18932854D48C0037C7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4334FE92857033C00733554 /* Pods_ConvenienceStore.framework */,
 				F4AF184F2854D3620037C7D2 /* DaumMap.embeddedframework */,
+				F4334FE92857033C00733554 /* Pods_ConvenienceStore.framework */,
 				F4AF18A02854D5040037C7D2 /* libsqlite3.tbd */,
 				F4AF189E2854D4F10037C7D2 /* libxml2.tbd */,
 				F4AF189C2854D4DD0037C7D2 /* libc++.tbd */,
@@ -789,7 +789,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.simon.ConvenienceStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/simon/Desktop/FastCampus/iOS_FastCampus_Tutorial/5. Advanced/ConvenienceStore/ConvenienceStore/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/simon/Desktop/FastCampus/iOS_FastCampus_Tutorial/Advanced/ConvenienceStore/ConvenienceStore/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -824,7 +824,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.simon.ConvenienceStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/simon/Desktop/FastCampus/iOS_FastCampus_Tutorial/5. Advanced/ConvenienceStore/ConvenienceStore/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/simon/Desktop/FastCampus/iOS_FastCampus_Tutorial/Advanced/ConvenienceStore/ConvenienceStore/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
