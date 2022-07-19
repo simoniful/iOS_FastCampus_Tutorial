@@ -29,6 +29,8 @@
 		F4DD9A7A288545E500468E9C /* ButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A79288545E500468E9C /* ButtonIcon.swift */; };
 		F4DD9A7D288551BC00468E9C /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7C288551BC00468E9C /* TweetViewController.swift */; };
 		F4DD9A7F288551C800468E9C /* TweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7E288551C800468E9C /* TweetPresenter.swift */; };
+		F4DD9AC52886F4F700468E9C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AC42886F4F700468E9C /* WriteViewController.swift */; };
+		F4DD9AC72886F52A00468E9C /* WritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AC62886F52A00468E9C /* WritePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		F4DD9A79288545E500468E9C /* ButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIcon.swift; sourceTree = "<group>"; };
 		F4DD9A7C288551BC00468E9C /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		F4DD9A7E288551C800468E9C /* TweetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPresenter.swift; sourceTree = "<group>"; };
+		F4DD9AC42886F4F700468E9C /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		F4DD9AC62886F52A00468E9C /* WritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 				F4DD9A3428851ACA00468E9C /* TabBarViewController.swift */,
 				F4DD9A72288539D000468E9C /* Feed */,
 				F4DD9A7B2885519500468E9C /* Tweet */,
+				F4DD9AC32886F4D600468E9C /* Write */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -266,6 +271,15 @@
 				F4DD9A7E288551C800468E9C /* TweetPresenter.swift */,
 			);
 			path = Tweet;
+			sourceTree = "<group>";
+		};
+		F4DD9AC32886F4D600468E9C /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				F4DD9AC42886F4F700468E9C /* WriteViewController.swift */,
+				F4DD9AC62886F52A00468E9C /* WritePresenter.swift */,
+			);
+			path = Write;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +532,8 @@
 				F4DD9A7428853E3000468E9C /* TabBarItem.swift in Sources */,
 				F4DD9A7F288551C800468E9C /* TweetPresenter.swift in Sources */,
 				F4DD9A7628853F0E00468E9C /* FeedTableViewCell.swift in Sources */,
+				F4DD9AC52886F4F700468E9C /* WriteViewController.swift in Sources */,
+				F4DD9AC72886F52A00468E9C /* WritePresenter.swift in Sources */,
 				F4DD9A3128851ACA00468E9C /* AppDelegate.swift in Sources */,
 				F4DD9A3328851ACA00468E9C /* SceneDelegate.swift in Sources */,
 				F4DD9A6A2885204400468E9C /* User.swift in Sources */,
