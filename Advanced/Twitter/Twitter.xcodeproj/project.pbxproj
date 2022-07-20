@@ -15,7 +15,6 @@
 		F4DD9A3528851ACA00468E9C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A3428851ACA00468E9C /* TabBarViewController.swift */; };
 		F4DD9A3A28851ACF00468E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DD9A3928851ACF00468E9C /* Assets.xcassets */; };
 		F4DD9A3D28851ACF00468E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DD9A3B28851ACF00468E9C /* LaunchScreen.storyboard */; };
-		F4DD9A4828851ACF00468E9C /* TwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A4728851ACF00468E9C /* TwitterTests.swift */; };
 		F4DD9A5228851ACF00468E9C /* TwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A5128851ACF00468E9C /* TwitterUITests.swift */; };
 		F4DD9A5428851ACF00468E9C /* TwitterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A5328851ACF00468E9C /* TwitterUITestsLaunchTests.swift */; };
 		F4DD9A6228851AED00468E9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4DD9A6128851AED00468E9C /* SnapKit */; };
@@ -34,6 +33,15 @@
 		F4DD9ACA28877EB700468E9C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AC928877EB700468E9C /* ProfileViewController.swift */; };
 		F4DD9ACC28877EC700468E9C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9ACB28877EC700468E9C /* ProfilePresenter.swift */; };
 		F4DD9ACF2887954900468E9C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F4DD9ACE2887954900468E9C /* Toast */; };
+		F4DD9AD12887A3AD00468E9C /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AD02887A3AC00468E9C /* FeedPresenterTests.swift */; };
+		F4DD9AD42887A73200468E9C /* MockUserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AD32887A73200468E9C /* MockUserDefaultManager.swift */; };
+		F4DD9AD62887A9D900468E9C /* MockFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AD52887A9D900468E9C /* MockFeedViewController.swift */; };
+		F4DD9AD92887AA3400468E9C /* TweetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AD82887AA3400468E9C /* TweetPresenterTests.swift */; };
+		F4DD9ADB2887AA5A00468E9C /* WritePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9ADA2887AA5A00468E9C /* WritePresenterTests.swift */; };
+		F4DD9ADD2887AA9700468E9C /* MockWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9ADC2887AA9700468E9C /* MockWriteViewController.swift */; };
+		F4DD9ADF2887AC8000468E9C /* MockTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9ADE2887AC7F00468E9C /* MockTweetViewController.swift */; };
+		F4DD9AE12887AE0C00468E9C /* ProfilePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AE02887AE0C00468E9C /* ProfilePresenterTests.swift */; };
+		F4DD9AE32887AE2A00468E9C /* MockProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AE22887AE2A00468E9C /* MockProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +79,6 @@
 		F4DD9A3C28851ACF00468E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4DD9A3E28851ACF00468E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DD9A4328851ACF00468E9C /* TwitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4DD9A4728851ACF00468E9C /* TwitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTests.swift; sourceTree = "<group>"; };
 		F4DD9A4D28851ACF00468E9C /* TwitterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DD9A5128851ACF00468E9C /* TwitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUITests.swift; sourceTree = "<group>"; };
 		F4DD9A5328851ACF00468E9C /* TwitterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -89,6 +96,15 @@
 		F4DD9AC62886F52A00468E9C /* WritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePresenter.swift; sourceTree = "<group>"; };
 		F4DD9AC928877EB700468E9C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F4DD9ACB28877EC700468E9C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		F4DD9AD02887A3AC00468E9C /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
+		F4DD9AD32887A73200468E9C /* MockUserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultManager.swift; sourceTree = "<group>"; };
+		F4DD9AD52887A9D900468E9C /* MockFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeedViewController.swift; sourceTree = "<group>"; };
+		F4DD9AD82887AA3400468E9C /* TweetPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPresenterTests.swift; sourceTree = "<group>"; };
+		F4DD9ADA2887AA5A00468E9C /* WritePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePresenterTests.swift; sourceTree = "<group>"; };
+		F4DD9ADC2887AA9700468E9C /* MockWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWriteViewController.swift; sourceTree = "<group>"; };
+		F4DD9ADE2887AC7F00468E9C /* MockTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTweetViewController.swift; sourceTree = "<group>"; };
+		F4DD9AE02887AE0C00468E9C /* ProfilePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterTests.swift; sourceTree = "<group>"; };
+		F4DD9AE22887AE2A00468E9C /* MockProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +199,8 @@
 		F4DD9A4628851ACF00468E9C /* TwitterTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4DD9A4728851ACF00468E9C /* TwitterTests.swift */,
+				F4DD9AD72887A9FF00468E9C /* Tests */,
+				F4DD9AD22887A3DD00468E9C /* Mocks */,
 			);
 			path = TwitterTests;
 			sourceTree = "<group>";
@@ -296,6 +313,29 @@
 				F4DD9ACB28877EC700468E9C /* ProfilePresenter.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F4DD9AD22887A3DD00468E9C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F4DD9AD32887A73200468E9C /* MockUserDefaultManager.swift */,
+				F4DD9AD52887A9D900468E9C /* MockFeedViewController.swift */,
+				F4DD9ADE2887AC7F00468E9C /* MockTweetViewController.swift */,
+				F4DD9ADC2887AA9700468E9C /* MockWriteViewController.swift */,
+				F4DD9AE22887AE2A00468E9C /* MockProfileViewController.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F4DD9AD72887A9FF00468E9C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F4DD9AD02887A3AC00468E9C /* FeedPresenterTests.swift */,
+				F4DD9AD82887AA3400468E9C /* TweetPresenterTests.swift */,
+				F4DD9ADA2887AA5A00468E9C /* WritePresenterTests.swift */,
+				F4DD9AE02887AE0C00468E9C /* ProfilePresenterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,7 +608,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4DD9A4828851ACF00468E9C /* TwitterTests.swift in Sources */,
+				F4DD9AD92887AA3400468E9C /* TweetPresenterTests.swift in Sources */,
+				F4DD9ADF2887AC8000468E9C /* MockTweetViewController.swift in Sources */,
+				F4DD9AE12887AE0C00468E9C /* ProfilePresenterTests.swift in Sources */,
+				F4DD9AD62887A9D900468E9C /* MockFeedViewController.swift in Sources */,
+				F4DD9ADD2887AA9700468E9C /* MockWriteViewController.swift in Sources */,
+				F4DD9AE32887AE2A00468E9C /* MockProfileViewController.swift in Sources */,
+				F4DD9AD42887A73200468E9C /* MockUserDefaultManager.swift in Sources */,
+				F4DD9AD12887A3AD00468E9C /* FeedPresenterTests.swift in Sources */,
+				F4DD9ADB2887AA5A00468E9C /* WritePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
