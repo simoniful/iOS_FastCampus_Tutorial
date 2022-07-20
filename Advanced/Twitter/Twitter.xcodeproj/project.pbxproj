@@ -31,6 +31,9 @@
 		F4DD9A7F288551C800468E9C /* TweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9A7E288551C800468E9C /* TweetPresenter.swift */; };
 		F4DD9AC52886F4F700468E9C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AC42886F4F700468E9C /* WriteViewController.swift */; };
 		F4DD9AC72886F52A00468E9C /* WritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AC62886F52A00468E9C /* WritePresenter.swift */; };
+		F4DD9ACA28877EB700468E9C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9AC928877EB700468E9C /* ProfileViewController.swift */; };
+		F4DD9ACC28877EC700468E9C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DD9ACB28877EC700468E9C /* ProfilePresenter.swift */; };
+		F4DD9ACF2887954900468E9C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F4DD9ACE2887954900468E9C /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,8 @@
 		F4DD9A7E288551C800468E9C /* TweetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPresenter.swift; sourceTree = "<group>"; };
 		F4DD9AC42886F4F700468E9C /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		F4DD9AC62886F52A00468E9C /* WritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePresenter.swift; sourceTree = "<group>"; };
+		F4DD9AC928877EB700468E9C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F4DD9ACB28877EC700468E9C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DD9ACF2887954900468E9C /* Toast in Frameworks */,
 				F4DD9A6228851AED00468E9C /* SnapKit in Frameworks */,
 				9D72D934080CED2E51347D79 /* Pods_Twitter.framework in Frameworks */,
 			);
@@ -217,6 +223,7 @@
 				F4DD9A72288539D000468E9C /* Feed */,
 				F4DD9A7B2885519500468E9C /* Tweet */,
 				F4DD9AC32886F4D600468E9C /* Write */,
+				F4DD9AC828877E9300468E9C /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -282,6 +289,15 @@
 			path = Write;
 			sourceTree = "<group>";
 		};
+		F4DD9AC828877E9300468E9C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F4DD9AC928877EB700468E9C /* ProfileViewController.swift */,
+				F4DD9ACB28877EC700468E9C /* ProfilePresenter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,6 +318,7 @@
 			name = Twitter;
 			packageProductDependencies = (
 				F4DD9A6128851AED00468E9C /* SnapKit */,
+				F4DD9ACE2887954900468E9C /* Toast */,
 			);
 			productName = Twitter;
 			productReference = F4DD9A2D28851ACA00468E9C /* Twitter.app */;
@@ -380,6 +397,7 @@
 			mainGroup = F4DD9A2428851AC900468E9C;
 			packageReferences = (
 				F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F4DD9ACD2887954900468E9C /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = F4DD9A2E28851ACA00468E9C /* Products */;
 			projectDirPath = "";
@@ -532,9 +550,11 @@
 				F4DD9A7428853E3000468E9C /* TabBarItem.swift in Sources */,
 				F4DD9A7F288551C800468E9C /* TweetPresenter.swift in Sources */,
 				F4DD9A7628853F0E00468E9C /* FeedTableViewCell.swift in Sources */,
+				F4DD9ACA28877EB700468E9C /* ProfileViewController.swift in Sources */,
 				F4DD9AC52886F4F700468E9C /* WriteViewController.swift in Sources */,
 				F4DD9AC72886F52A00468E9C /* WritePresenter.swift in Sources */,
 				F4DD9A3128851ACA00468E9C /* AppDelegate.swift in Sources */,
+				F4DD9ACC28877EC700468E9C /* ProfilePresenter.swift in Sources */,
 				F4DD9A3328851ACA00468E9C /* SceneDelegate.swift in Sources */,
 				F4DD9A6A2885204400468E9C /* User.swift in Sources */,
 				F4DD9A7D288551BC00468E9C /* TweetViewController.swift in Sources */,
@@ -890,6 +910,14 @@
 				kind = branch;
 			};
 		};
+		F4DD9ACD2887954900468E9C /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -897,6 +925,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4DD9A6028851AED00468E9C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F4DD9ACE2887954900468E9C /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DD9ACD2887954900468E9C /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
