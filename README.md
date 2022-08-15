@@ -4,14 +4,14 @@
 
 | 주제                   | 이슈 정리           | 마지막 업데이트                     |    구현 방식    |
 | --------------------- | ---------------- | ---------------------------| ------------- |
-| 뽀모도로 타이머  |     ✔️             |  **2022.04.27**                 |  SnapKit + Rx  |
-| 날씨              |       ✔️             |    **2022.04.30**            |  SnapKit + Rx + MVVM  |
-| 코로나 현황   |       ✔️          |      **2022.05.06**               |  SnapKit +  Chart + Static Table + Rx  |
-| 스포티파이 로그인   |       ✔️            |      **2022.05.11**             |  SnapKit +  FirebaseAuth + AppleAuth + Rx |
+| 뽀모도로 타이머  |     ✔️             |  **2022.04.27**                 |  SnapKit + RxSwift  |
+| 날씨              |       ✔️             |    **2022.04.30**            |  SnapKit + RxSwift + MVVM  |
+| 코로나 현황   |       ✔️          |      **2022.05.06**               |  SnapKit +  Chart + Static Table + RxSwift  |
+| 스포티파이 로그인   |       ✔️            |      **2022.05.11**             |  SnapKit +  FirebaseAuth + AppleAuth + RxSwift |
 | 신용카드 추천   |         ✔️          |      **2022.05.13**               |  SnapKit +  Firestore  + Realtime DB + Lottie + Rx |
 | 실시간 공지사항 팝업   |          ✔️        |      **2022.05.14**         |  SnapKit + Remote Config + A/B Testing |
 | 물 마시기 알람, 재난 문자 리모트 푸시 알람  |        ✔️          |      **2022.05.15**         |  SnapKit + Local Notification |
-| 넷플릭스 UI 클론  |         ✔️         |      **2022.05.16**         |  SnapKit + Compositional CollectionView  + Rx |
+| 넷플릭스 UI 클론  |         ✔️         |      **2022.05.16**         |  SnapKit + Compositional CollectionView  + RxSwift |
 | 브류어리 |          ✔️         |      **2022.05.17**         |  SnapKit + Prefetching Pagenation  + GCD |
 | 자산관리 |            ✔️       |      **2022.05.20**         |  SwiftUI + pagerView + ViewRepresentable|
 | 앱 스토어 UI 클론 |         ✔️          |      **2022.05.25**         |  SnapKit + Complex UI Comp |
@@ -25,7 +25,7 @@
 | Cafe UI 클론 |           ✔️        |      **2022.06.16**         |  SwiftUI + Combine |
 | 번역기 |           ✔️        |      **2022.06.20**         |  SnapKit + Localization + Attributed String |
 | 도서 리뷰 |         ✔️          |      **2022.06.22**         |  SnapKit + MVP + XCTest |
-| 영화 평점 |          ✔️         |      **2022.06.23**         |  SnapKit + MVP + SwiftLint + BDD Test + |
+| 영화 평점 |          ✔️         |      **2022.06.23**         |  SnapKit + MVP + SwiftLint + BDD Test |
 | 트위터 클론 |         ✔️          |      **2022.07.15**         |  SnapKit + MVP + XCTest |
 
 ## 2. 과제 이슈 & 회고
