@@ -8,7 +8,7 @@
 | 날씨              |       ✔️             |    **2022.04.30**            |  SnapKit + RxSwift + MVVM  |
 | 코로나 현황   |       ✔️          |      **2022.05.06**               |  SnapKit +  Chart + Static Table + RxSwift  |
 | 스포티파이 로그인   |       ✔️            |      **2022.05.11**             |  SnapKit +  FirebaseAuth + AppleAuth + RxSwift |
-| 신용카드 추천   |         ✔️          |      **2022.05.13**               |  SnapKit +  Firestore  + Realtime DB + Lottie + Rx |
+| 신용카드 추천   |         ✔️          |      **2022.05.13**               |  SnapKit +  Firestore  + Realtime DB + Lottie + RxSwift |
 | 실시간 공지사항 팝업   |          ✔️        |      **2022.05.14**         |  SnapKit + Remote Config + A/B Testing |
 | 물 마시기 알람, 재난 문자 리모트 푸시 알람  |        ✔️          |      **2022.05.15**         |  SnapKit + Local Notification |
 | 넷플릭스 UI 클론  |         ✔️         |      **2022.05.16**         |  SnapKit + Compositional CollectionView  + RxSwift |
